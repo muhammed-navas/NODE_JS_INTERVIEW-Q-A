@@ -56,3 +56,74 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 
 ![alt text](/assest/image.png)
 
+
+**⭕Q6 --> What is Single Threaded Programming?**
+
+(a)
+* A single-threaded programming language executes code sequentially in a single thread, meaning it processes one instruction at a time .This means that if one task is taking longer, the entire program must wait, and multiple tasks cannot be processed simultaneously. 
+
+![alt text](/assest/image2.png)
+
+
+**⭕Q7 --> What is Synchronous Programming?**
+
+(a)
+* In a synchronous program, each task is performed one after the other, and the program waits for each operation to complete before moving on to the next one.
+* Synchronous programming focuses on the order of execution in a sequential manner, while single-threaded programming focuses on the single thread.
+
+
+**⭕Q8 --> What is Multi Threaded Programming?**
+
+(a)
+* Multithreaded programming involves dividing a program's execution into multiple independent threads, allowing them to run concurrently, potentially improving performance and responsiveness. Each thread can execute its instructions independently while sharing the same memory space and resources of the parent process. 
+
+![alt text](/assest/image3.png)
+
+
+**⭕Q9 --> What is Asynchronous Programming?**
+
+(a)
+* In Node.js, asynchronous flow can be achieved by its single-threaded, non-blocking, and event-driven architecture.
+
+* In Node.js, if there are 4 tasks(Task1, Task2, Task3, Task4) to be completed for an event. Then below steps will be executed:
+1. First, Thread T1 will be created.
+2. Thread T1 initiates Task1, but it won't wait for Task1 to complete. Instead, T1 proceeds to initiate Task2, then Task3 and Task4(This asynchronous execution allows T1 to efficiently handle multiple tasks concurrently).
+3. Whenever Task1 completes, an event is emitted.
+4. Thread T1, being event-driven, promptly responds to this event, interrupting its current task and delivering the result of Task1.
+
+
+**⭕Q10 --> What is the difference between Synchronous & Asynchronous programming?**
+
+(a)
+![alt text](/assest/image4.png)
+
+
+**⭕Q11 --> What are Events, Event Emitter, Event Queue, Event Loop & Event Driven?**
+
+(a)
+   * Event: Signals that something has happened in a program.
+   * Event Emitter: Create or emit events.
+   * Event Queue: Events emitted queued (stored) in event queue.
+   * Event Handler(Event Listener): Function that responds to specific events
+   * Event Loop: The event loop picks up event from the event queue and executes them in the order they were added.
+   * Event Driven Architecture: It means operations in Node are drive or based by events.
+
+   ![alt text](/assest/image5.png)
+
+
+**⭕Q11 --> What are the main features & advantages of Node.js?**
+
+(a)
+   ![alt text](/assest/image6.png)
+
+
+**⭕Q11 --> What are the main features & advantages of Node.js?**
+
+(a)
+* When to Use Node.js : 
+  [1]--> ✓ Ideal for real-time applications like chat applications, online gaming, and collaborative tools due to its event-driven architecture.
+  [2]--> ✓ Excellent for building lightweight and scalable RESTful APIs that handle a large number of concurrent connections.
+  [3]--> ✓ Well-suited for building microservices-based architectures, enabling modular and scalable systems.
+
+* When Not to Use Node.js : 
+  [1]--> ✗ CPU-Intensive Tasks: Avoid for applications that involve heavy CPU processing (Image/Video Processing, Data Encryption/Decryption) as Node.js may not provide optimal performance in such scenarios because it is single-threaded and for heavy computation multi-threaded is better.
