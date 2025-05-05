@@ -1,5 +1,5 @@
 
-<span style="font-size: 20px;fot-weight: bold;color:orange;">Q1 -->  What is node js ? </span>
+**⭕Q1 -->  What is node js ?**
 
 (a)
  * Node.js is a JavaScript runtime environment that allows developers to run JavaScript on the server-side.
@@ -14,7 +14,7 @@
 
 ![alt text](</assest/WhatsApp Image 2025-05-05 at 15.07.58_4cf886ac.jpg>)
 
-Q2 --> How is Node a runtime environment on the server side? What is V8?
+**⭕Q2 --> How is Node a runtime environment on the server side? What is V8?**
 
 (a)
 * Browser Execute Javascript on the Client-side , Node.js Execute Javascript on the Server-side.
@@ -32,14 +32,14 @@ Mozilla's JavaScript engine, used in Firefox and potentially in server-side envi
 - Chakra:
 Microsoft's JavaScript engine, with a C API that allows embedding in other applications, including potential use as an alternative engine in Node.js.
 
-Q3 --> What is the difference between a Runtime Environment and a Framework?
+**⭕Q3 --> What is the difference between a Runtime Environment and a Framework?**
 
 (a)
 * Runtime Environment: Primarily focuses on providing the necessary infrastructure for code execution, including services like memory management and I/O operations.
 
 * Framework: Primarily focuses on simplifying the development process by offering a structured set of tools, libraries, and best practices.
 
-Q4 --> What is the difference between Node.js and Express.js?
+**⭕Q4 --> What is the difference between Node.js and Express.js?**
 
 (a)
 * Node.js is a runtime environment that allows the execution of JavaScript code server-side.
@@ -48,7 +48,7 @@ Q4 --> What is the difference between Node.js and Express.js?
     * It is designed to simplify the process of building web applications and APIs by providing a set of features like simple routing system, middleware support etc.
 
 
-Q5 --> What are the differences between Client-Side (Browser) and Server-Side (Node.js)?
+**⭕Q5 --> What are the differences between Client-Side (Browser) and Server-Side (Node.js)?**
 
 (a)
 
