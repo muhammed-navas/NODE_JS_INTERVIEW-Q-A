@@ -1,6 +1,5 @@
 
-
-Q1 -->  What is node js ? 
+<span style="font-size: 20px;fot-weight: bold;color:orange;">Q1 -->  What is node js ? </span>
 
 (a)
  * Node.js is a JavaScript runtime environment that allows developers to run JavaScript on the server-side.
@@ -53,21 +52,7 @@ Q5 --> What are the differences between Client-Side (Browser) and Server-Side (N
 
 (a)
 
-                            Client-Side (Browser)                    Server-Side (Node.js/Server)
-
-Environment Location        Runs on the user's web browser.           Runs on the server.
-
-Primary Languages           HTML, CSS, JavaScript.                    JavaScript
-
-Document/ Window/
-Navigator/Event Objects     Yes                                       No
-
-Request/Response/
-Server/ Database Object    No                                        Yes
-
-Responsibilities           Handles UI display, interactions,         Handles business logic, data storage/ access, 
-                           and client-side logic.                    authentication, authorization etc. 
-
+![alt text](/assest/image1.png)
 
 ![alt text](/assest/image.png)
 
