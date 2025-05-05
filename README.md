@@ -286,7 +286,7 @@ Express supports various template engines (like EJS, Pug, Handlebars), enabling 
 * A middleware in Express.js is a function that handles HTTP requests, performs operations, and passes control to the next middleware.
 * Middleware can be used for various purposes such as authentication, logging, error handling, and more.
 
-![alt text](/assest/image7.png.png)
+![alt text](/assest/image7.png)
 
 
 **⭕Q22 --> What is the purpose of the app.use() function in Express.js?**
@@ -505,3 +505,61 @@ app.listen(3000, () => {
 **⭕Q35 --> What are HTTP Request and Response structures in UI and REST API?**
 
 ![alt text](/assest/image13.png)
+
+
+**⭕Q36 -->  main types of web APIs used in modern software development**
+
+(a)
+
+✅ 1. REST API (Representational State Transfer)
+Style: Architectural style (not a protocol)
+Format: Typically uses JSON or XML
+Protocol: HTTP
+Common verbs: GET, POST, PUT, DELETE
+Usage: Widely used for web services due to its simplicity and performance
+
+✅ 2. SOAP API (Simple Object Access Protocol)
+Style: Strict protocol (based on XML)
+Format: XML only
+Protocol: Typically uses HTTP or SMTP
+Features: Strong typing, built-in error handling, more secure
+Usage: Enterprise-level systems (e.g., banking, finance)
+
+✅ 3. GraphQL API
+Style: Query language for APIs (by Facebook)
+Format: JSON
+Protocol: HTTP
+Features: Client can request exactly the data it needs
+Usage: Optimized front-end communication with flexible data
+
+✅ 4. gRPC (Google Remote Procedure Call)
+Style: Binary protocol based on HTTP/2
+Format: Protocol Buffers (protobuf)
+Features: Very fast, efficient for microservices and internal APIs
+Usage: High-performance backend services (e.g., Google Cloud)
+
+✅ 5. WebSockets API
+Style: Full-duplex communication channel over a single TCP connection
+Format: Any (JSON, text, binary)
+Features: Real-time data exchange (bidirectional)
+Usage: Chat apps, live updates, gaming
+
+
+**⭕Q37 -->  What are GET, POST, PUT & DELETE HTTP methods?**
+
+![alt text](/assest/image14.png)
+
+
+**⭕Q38 -->  What is the difference between PUT & PATCH methods?**
+
+![alt text](/assest/image15.png)
+
+
+**⭕Q39 -->  What are the role of status codes in RESTful APIs?**
+
+(a) 
+
+* Status codes are used to indicate the outcome of a request.
+
+![alt text](/assest/image16.png)
+
