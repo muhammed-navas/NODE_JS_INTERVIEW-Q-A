@@ -238,14 +238,14 @@ myEmitter.on('event', () => {
 });
 
 
-**⭕Q18 --> What is the difference between a function and an event?**
+**⭕Q19 --> What is the difference between a function and an event?**
 
 (a) 
 * A function is a reusable piece of code that performs a specific task when invoked or called.
 * Events represent actions that can be observed and responded to. Events will call functions internally.
 
 
-**⭕Q18 --> What is the role createServer() method of http module?**
+**⭕Q20 --> What is the role createServer() method of http module?**
 
 (a)
 
@@ -261,3 +261,247 @@ server.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
 
+
+**⭕Q20 --> What are the Advantage of using Express with Node js?**
+
+(a)
+
+✅ 1. Simplified Web Development
+Express simplifies the process of building web applications by providing a clean structure and built-in features like routing, middleware support, and template engines.
+
+✅ 2. Middleware Support
+Express makes it easy to integrate and manage middleware functions, which handle request processing, validation, logging, authentication, and more — enhancing the application's request-response cycle.
+
+✅ 3. Flexible Routing System
+Express provides a powerful and flexible routing system to define routes for handling different HTTP methods (GET, POST, PUT, DELETE, etc.). It also supports dynamic route parameters and URL patterns.
+
+✅ 4. Template Engine Integration
+Express supports various template engines (like EJS, Pug, Handlebars), enabling dynamic generation of HTML on the server side — making it easier to serve dynamic content to users.
+
+
+
+**⭕Q21 --> What is Middleware in Express.js and when to use them?**
+
+(a)
+* A middleware in Express.js is a function that handles HTTP requests, performs operations, and passes control to the next middleware.
+* Middleware can be used for various purposes such as authentication, logging, error handling, and more.
+
+![alt text](/assest/image7.png.png)
+
+
+**⭕Q22 --> What is the purpose of the app.use() function in Express.js?**
+
+(a)
+* the app.use() method is used to execute(mount) middleware function globally.
+
+ const express = require('express');
+ const app = express();
+
+const middleware = (req, res, next) => {
+   console.log('Middleware executed');
+   next();
+ };
+
+ app.use(middleware);
+
+ app.listen(3000, () => {
+   console.log('Server is running on port 3000');
+ });
+
+
+**⭕Q23 --> What is the purpose of the next parameter in Express.js?**
+
+(a)
+* next parameter is callback function which is used to pass control to the next middleware function in the stack.
+
+const express = require('express');
+
+const app = express();
+
+const middleware1 = (req,res,nex) =>{
+    console.log('muhammed')
+    next();
+}
+const middleware2 = (req,res,next) =>{
+    console.log('navas');
+    next();
+}
+app.use(middleware1);
+app.use(middleware2);
+
+app.listen(3000,()=>{
+    console.log('server is running 3000')
+})
+
+
+**⭕Q24 --> What are the type of middleware's in Express.js?**
+
+(a) 
+* There are five types of middleware's in Express.js
+
+ 1. Application-level middleware
+ 2. Router-level middleware
+ 3. Error-handling middleware
+ 4. Built-in middleware
+ 5. Third-party middleware
+
+**⭕Q25 -->  What is the difference btw application-level & route-level middleware?**
+
+
+  ✅ Application-level middleware applies globally to all incoming request in the entire express application.
+
+  const express = require('express');
+  const app = express();
+
+  const middleware = (req, res, next) => {
+    console.log('Middleware executed');
+    next();
+  };
+
+  app.use(middleware);
+
+  app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+  });
+
+ ✅route-level middleware applies only to specific route , not for all imcoming request.
+
+ const express = require('express');
+ const app = express();
+
+ const middleware = (req, res, next) => {
+   console.log('Middleware executed');
+   next();
+ };
+
+ app.get('/route', middleware, (req, res) => {
+   res.send('Route handler');
+ });
+
+ app.listen(3000, () => {
+   console.log('Server is running on port 3000');
+ });
+
+
+**⭕Q26 -->  What is error handling middleware and how to implement it?**
+
+(a)
+* Error handling middleware in Express is a special kind of middleware used to manage errors happening while handling incoming requests.
+* To implement error handling in Express, define middleware with four parameters (err, req, res, next). Here the additional error object parameter will be used for error handling.
+
+const express = require('express');
+const app = express();
+
+const errorHandler = (err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong!');
+};
+
+app.use(errorHandler);
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+
+**⭕Q27 -->  What is built in middleware? How to serve static files from Express.js?**
+
+(a)
+* Built in middleware's are built in functions inside Express framework which provides common functionalities.
+* express.static() middleware is used for serving static files.
+
+const express = require('express');
+const app = express();
+
+app.use(express.static('public'));
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+
+**⭕Q28 --> What are third-party middleware's? Give some examples?**
+
+(a)
+
+* therd-party middleware Express.js modules are developed therd-party developers.(not part of the core express)
+
+const express = require('express');
+const helmet = require('helmet');
+const bodyparser = require('body-parser');
+const morgan = require('morgan');
+const compression = require('compression');
+
+const app = express();
+
+// use the helmet middleware for setting HTTP security headers
+app.use(helmet());
+
+// use the body-parser middleware for parsing request bodies
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: true }));
+
+// use the morgan middleware for logging HTTP requests
+app.use(morgan('combined'));
+
+// use the compression middleware for compressing responses
+app.use(compression());
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+
+**⭕Q29 --> Can you summarize all the type of middleware's?**
+
+(a)
+![alt text](/assest/image8.png)
+
+
+**⭕Q30 --> What are the advantages of using middleware in Express.js?**
+
+(a)
+![alt text](/assest/image9.png)
+
+
+**⭕Q31 --> What is Routing in Express.js?**
+
+(a)
+* Routing is the process of directing incoming HTTP requests to the appropriate handler function based on the request method (eg. GET, POST, PUT, DELETE) and the URL path.
+
+
+![alt text](/assest/image10.png)
+
+
+**⭕Q32 --> What is the difference between middleware & routing in Express?**
+
+(a)
+ ▶ middleware :- 
+    *  Middleware are functions.
+    * Middleware functions can access and the request and response objects, then they can
+    * perform some actions (logic like authorization) 
+    * End the request-response cycle 
+    * Call the next middleware function in the stack.
+
+ ▶ routing :- 
+    * Routing is a process.
+    * Routing is the process of directing incoming HTTP requests to the appropriate handler functions (Get, Put, Post/Delete).
+    
+
+**⭕Q33 --> What are Template Engines in Express.js?**
+
+(a)
+* Template engines are libraries that enable developers to generate dynamic HTML content by combining static HTML templates with data.
+
+![alt text](/assest/image11.png)
+
+
+**⭕Q34 --> Name some Template Engines libraries?**
+
+(a)
+![alt text](/assest/image12.png)
+
+
+**⭕Q35 --> What are HTTP Request and Response structures in UI and REST API?**
+
+![alt text](/assest/image13.png)
