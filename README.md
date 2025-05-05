@@ -12,5 +12,5 @@ Q1 -->  What is node js ?
 ❎ not a framework
 ✅ a runtime environment
 
-![alt text](<WhatsApp Image 2025-05-05 at 15.07.58_4cf886ac.jpg>)
+![alt text](</assest/WhatsApp Image 2025-05-05 at 15.07.58_4cf886ac.jpg>)
 
