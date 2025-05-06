@@ -563,3 +563,169 @@ Usage: Chat apps, live updates, gaming
 
 ![alt text](/assest/image16.png)
 
+
+
+**⭕Q40 --> What is CORS in RESTful APIs?**
+
+(a)
+
+* CORS(Cross-Origin Resource Sharing) is a security feature implemented in web browsers that restricts web pages or scripts from making requests to a different domain than the one that served the web page.
+
+![alt text](/assest/image17.png)
+
+✅ 1 . is correct 
+
+✅ 2 . the ( http://xyz.com/getdate ) is diffrent website ( different domain districted )
+
+✅ 3 . the ( http://api.inteviewhappy.com/getdate ) is ( different subdomain distrected )
+
+✅ 4 . the ( httpS://inteviewhappy.com/getdate ) is ( different protocol distrected )
+
+✅ 5 . the ( http://inteviewhappy.com/getdate:3000 ) is ( different port distrected )
+
+
+
+**⭕Q41 --> What are Serialization & Deserialization?**
+
+(a)
+
+* Serialization is the process of converting an object into a format that can be easily stored or transmitted, such as JSON or XML.
+
+* Deserialization is the process of converting a serialized object back into its original form.
+
+![alt text](/assest/image18.png)
+
+
+
+**⭕Q42 --> What are the types of serialization?**
+
+
+![alt text](/assest/image19.png)
+
+
+
+**⭕Q43 --> How to Serialize & Deserialize in Node.js?**
+
+(a)
+
+* Serialize a javascript Object to JSON format using JSON.stringify() method.
+
+const obj = { name: 'John', age: 30 };
+const json = JSON.stringify(obj);
+console.log(json); // {"name":"John","age":30}
+
+* Deserialize a JSON string to a javascript Object using JSON.parse() method.
+
+const json = '{"name":"John","age":30}';
+const obj = JSON.parse(json);
+console.log(obj); // { name: 'John', age: 30 }
+
+
+**⭕Q44 --> What is an API document? What are the popular documentation formats?**
+
+
+(a) 
+* An Api document , describe the functionality , Features and usage of REST Api 
+
+![alt text](/assest/image20.png.png)
+
+* popular Api document tools
+
+![alt text](/assest/image21.png)
+
+
+**⭕Q45 --> What is the typical structure of a REST API project in Node?**
+
+(a)
+* node_modules: Directory where npm packages are installed.
+
+* src: Source code directory, containing:
+      * Database: Store and retrieve data.
+      * Config: Store configuration settings.
+      * controllers: Files responsible for handling business logic.
+      * models: Defines data models.
+      * routes: Defines API routes.
+      * Middlewares: Handle authentication, authorization, and other common tasks.
+      * utils: Contains reusable functions used across the project.
+      * app.js: Initializes and configures the Express application. Connects routes, middleware, and other configurations.
+
+* .gitignore: A file that specifies files and directories to be ignored by version control (e.g., node_modules, *.log).
+
+* package.json: The file that contains metadata about the project and its dependencies.
+
+
+![alt text](/assest/image22.png)
+
+
+
+**⭕Q45 --> What are Authentication and Authorization?**
+
+(a)
+
+* Authentication is the process of verifying the identity of a user by validating their credentials such as username and password.
+
+* Authorization is the process of allowing an authenticated user access to resources.
+* Authentication is always precedes to Authorization.
+
+![alt text](/assest/image23.png) ![alt text](/assest/image24.png)
+
+
+**⭕Q45 --> What are the types of authentication in Node.js?**
+
+
+![alt text](/assest/image25.png)
+
+
+**⭕Q45 --> What is Basic Authentication?**
+
+(a)
+* In Basic Authentication, the user passes their credentials on a post request. At the Node Rest API end, credentials are verified, and response is sent back.
+
+* The disadvantage of it is, Basic Authentication sends credentials in plain text over the network, so it is not considered a secure method of
+authentication.
+
+
+**⭕Q45 --> What are the security risks associated with storing passwords in plain text in Node.js?**
+
+(a) 
+*  Unauthorized Access: Storing passwords in plain text means that anyone with access to the storage location, such as a database or configuration file, can easily read and extract passwords.
+
+* Compromise of Other Accounts: Many users tend to reuse passwords across multiple accounts, allowing attackers to access to multiple accounts.
+
+
+**⭕Q45 --> What is the role of Hashing and Salt in securing passwords?**
+
+(a)
+* Hashing: Hashing is a process of converting a password into a fixed- size string of characters using a mathematical algorithm.
+
+
+![alt text](/assest/image26.png) ![alt text](/assest/image27.png)
+
+
+**⭕Q45 --> What is Token based and JWT authentication?**
+
+
+(a)
+* Token-based authentication is a method where a client proves its identity by using a token instead of sending username/password for every request. 
+
+🧠 How It Works:
+
+✅ Client logs in (with username & password).
+
+✅ Server validates the credentials.
+
+✅ Server generates a token (a string or encrypted object).
+
+✅ The token is sent to the client.
+
+✅ On future requests, the client sends the token in headers (usually Authorization: Bearer <token>).
+
+✅ The server validates the token and allows or denies the request.
+
+
+
+**⭕Q45 --> What is Error Handling? In how many ways you can do error handling in Node.js?**
+
+(a)
+* Error handling is the process of identifying and responding to errors that occur during the execution of a program.
+
