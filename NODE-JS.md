@@ -12,7 +12,7 @@
 ❎ not a framework
 ✅ a runtime environment
 
-![alt text](</asset/WhatsApp Image 2025-05-05 at 15.07.58_4cf886ac.jpg>)
+![alt text](</assest/WhatsApp Image 2025-05-05 at 15.07.58_4cf886ac.jpg>)
 
 **⭕Q2 --> How is Node a runtime environment on the server side? What is V8?**
 
@@ -52,9 +52,9 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 
 (a)
 
-![alt text](/asset/image1.png)
+![alt text](/assest/image1.png)
 
-![alt text](/asset/image.png)
+![alt text](/assest/image.png)
 
 
 **⭕Q6 --> What is Single Threaded Programming?**
@@ -62,7 +62,7 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 (a)
 * A single-threaded programming language executes code sequentially in a single thread, meaning it processes one instruction at a time .This means that if one task is taking longer, the entire program must wait, and multiple tasks cannot be processed simultaneously. 
 
-![alt text](/asset/image2.png)
+![alt text](/assest/image2.png)
 
 
 **⭕Q7 --> What is Synchronous Programming?**
@@ -77,7 +77,7 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 (a)
 * Multithreaded programming involves dividing a program's execution into multiple independent threads, allowing them to run concurrently, potentially improving performance and responsiveness. Each thread can execute its instructions independently while sharing the same memory space and resources of the parent process. 
 
-![alt text](/asset/image3.png)
+![alt text](/assest/image3.png)
 
 
 **⭕Q9 --> What is Asynchronous Programming?**
@@ -95,7 +95,7 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 **⭕Q10 --> What is the difference between Synchronous & Asynchronous programming?**
 
 (a)
-![alt text](/asset/image4.png)
+![alt text](/assest/image4.png)
 
 
 **⭕Q11 --> What are Events, Event Emitter, Event Queue, Event Loop & Event Driven?**
@@ -108,13 +108,13 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
    * Event Loop: The event loop picks up event from the event queue and executes them in the order they were added.
    * Event Driven Architecture: It means operations in Node are drive or based by events.
 
-   ![alt text](/asset/image5.png)
+   ![alt text](/assest/image5.png)
 
 
 **⭕Q12 --> What are the main features & advantages of Node.js?**
 
 (a)
-   ![alt text](/asset/image6.png)
+   ![alt text](/assest/image6.png)
 
 
 **⭕Q13 --> What are the main features & advantages of Node.js?**
@@ -286,7 +286,7 @@ Express supports various template engines (like EJS, Pug, Handlebars), enabling 
 * A middleware in Express.js is a function that handles HTTP requests, performs operations, and passes control to the next middleware.
 * Middleware can be used for various purposes such as authentication, logging, error handling, and more.
 
-![alt text](/asset/image7.png)
+![alt text](/assest/image7.png)
 
 
 **⭕Q22 --> What is the purpose of the app.use() function in Express.js?**
@@ -455,13 +455,13 @@ app.listen(3000, () => {
 **⭕Q29 --> Can you summarize all the type of middleware's?**
 
 (a)
-![alt text](/asset/image8.png)
+![alt text](/assest/image8.png)
 
 
 **⭕Q30 --> What are the advantages of using middleware in Express.js?**
 
 (a)
-![alt text](/asset/image9.png)
+![alt text](/assest/image9.png)
 
 
 **⭕Q31 --> What is Routing in Express.js?**
@@ -470,7 +470,7 @@ app.listen(3000, () => {
 * Routing is the process of directing incoming HTTP requests to the appropriate handler function based on the request method (eg. GET, POST, PUT, DELETE) and the URL path.
 
 
-![alt text](/asset/image10.png)
+![alt text](/assest/image10.png)
 
 
 **⭕Q32 --> What is the difference between middleware & routing in Express?**
@@ -493,18 +493,18 @@ app.listen(3000, () => {
 (a)
 * Template engines are libraries that enable developers to generate dynamic HTML content by combining static HTML templates with data.
 
-![alt text](/asset/image11.png)
+![alt text](/assest/image11.png)
 
 
 **⭕Q34 --> Name some Template Engines libraries?**
 
 (a)
-![alt text](/asset/image12.png)
+![alt text](/assest/image12.png)
 
 
 **⭕Q35 --> What are HTTP Request and Response structures in UI and REST API?**
 
-![alt text](/asset/image13.png)
+![alt text](/assest/image13.png)
 
 
 **⭕Q36 -->  main types of web APIs used in modern software development**
@@ -547,12 +547,12 @@ Usage: Chat apps, live updates, gaming
 
 **⭕Q37 -->  What are GET, POST, PUT & DELETE HTTP methods?**
 
-![alt text](/asset/image14.png)
+![alt text](/assest/image14.png)
 
 
 **⭕Q38 -->  What is the difference between PUT & PATCH methods?**
 
-![alt text](/asset/image15.png)
+![alt text](/assest/image15.png)
 
 
 **⭕Q39 -->  What are the role of status codes in RESTful APIs?**
@@ -561,7 +561,7 @@ Usage: Chat apps, live updates, gaming
 
 * Status codes are used to indicate the outcome of a request.
 
-![alt text](/asset/image16.png)
+![alt text](/assest/image16.png)
 
 
 
@@ -571,7 +571,7 @@ Usage: Chat apps, live updates, gaming
 
 * CORS(Cross-Origin Resource Sharing) is a security feature implemented in web browsers that restricts web pages or scripts from making requests to a different domain than the one that served the web page.
 
-![alt text](/asset/image17.png)
+![alt text](/assest/image17.png)
 
 ✅ 1 . is correct 
 
@@ -593,14 +593,14 @@ Usage: Chat apps, live updates, gaming
 
 * Deserialization is the process of converting a serialized object back into its original form.
 
-![alt text](/asset/image18.png)
+![alt text](/assest/image18.png)
 
 
 
 **⭕Q42 --> What are the types of serialization?**
 
 
-![alt text](/asset/image19.png)
+![alt text](/assest/image19.png)
 
 
 
@@ -627,11 +627,11 @@ console.log(obj); // { name: 'John', age: 30 }
 (a) 
 * An Api document , describe the functionality , Features and usage of REST Api 
 
-![alt text](/asset/image20.png.png)
+![alt text](/assest/image20.png.png)
 
 * popular Api document tools
 
-![alt text](/asset/image21.png)
+![alt text](/assest/image21.png)
 
 
 **⭕Q45 --> What is the typical structure of a REST API project in Node?**
@@ -654,7 +654,7 @@ console.log(obj); // { name: 'John', age: 30 }
 * package.json: The file that contains metadata about the project and its dependencies.
 
 
-![alt text](/asset/image22.png)
+![alt text](/assest/image22.png)
 
 
 
@@ -667,13 +667,13 @@ console.log(obj); // { name: 'John', age: 30 }
 * Authorization is the process of allowing an authenticated user access to resources.
 * Authentication is always precedes to Authorization.
 
-![alt text](/asset/image23.png) ![alt text](/asset/image24.png)
+![alt text](/assest/image23.png) ![alt text](/assest/image24.png)
 
 
 **⭕Q47 --> What are the types of authentication in Node.js?**
 
 
-![alt text](/asset/image25.png)
+![alt text](/assest/image25.png)
 
 
 **⭕Q48 --> What is Basic Authentication?**
@@ -699,7 +699,7 @@ authentication.
 * Hashing: Hashing is a process of converting a password into a fixed- size string of characters using a mathematical algorithm.
 
 
-![alt text](/asset/image26.png) ![alt text](/asset/image27.png)
+![alt text](/assest/image26.png) ![alt text](/assest/image27.png)
 
 
 **⭕Q51 --> What is Token based and JWT authentication?**
@@ -729,7 +729,7 @@ authentication.
 (a)
 * Error handling is the process of identifying and responding to errors that occur during the execution of a program.
 
-![alt text](/asset/image28.png)
+![alt text](/assest/image28.png)
 
 
 
@@ -764,7 +764,7 @@ try{
 * catch method is used promises for error handle
 * .catch() method will be called if the Promise is rejected.
 
-![alt text](/asset/image29.png)
+![alt text](/assest/image29.png)
 
 
 **⭕Q55 --> How to handle errors while using async-await?**
@@ -773,7 +773,7 @@ try{
 
 * try-catch block is used with async-await for handle errors 
 
-![alt text](/asset/image30.png)
+![alt text](/assest/image30.png)
 
 
 
@@ -785,7 +785,7 @@ try{
 
 * Streams are a way to handle reading/writing files, network communications, or any kind of end-to-end information exchange in an efficient way. They can be readable, writable, or both (duplex) and allow processing data piece by piece without loading the entire data into memory.
 
-![alt text](/asset/31.png)
+![alt text](/assest/31.png)
 
 
 **⭕Q57 --> How do you identify and fix memory leaks in a Node.js application?**
@@ -848,7 +848,7 @@ try{
 🥦 Pipes connect streams together for efficient data flow
 
 
-![alt text](/asset/2.png)  ![alt text](/asset/3.png)
+![alt text](/assest/2.png)  ![alt text](/assest/3.png)
 
 
 **⭕Q61 --> What is libuv? What is its role in Node.js?**
@@ -888,7 +888,7 @@ try{
 
 * Improves performance and fault tolerance.
 
-![alt text](/asset/4.png)
+![alt text](/assest/4.png)
 
 📈 Benefits of Clustering : - 
 
@@ -911,7 +911,7 @@ try{
 
 👍 Commonly used for resource identifiers like user ID, product ID, etc.
 
-![alt text](/asset/5.png)
+![alt text](/assest/5.png)
 
 
 📌 2. Query Strings (req.query)
@@ -920,11 +920,11 @@ try{
 
 👍 Common for filters, pagination, sorting, search, etc.
 
-![alt text](/asset/6.png)
+![alt text](/assest/6.png)
 
 🔍 Difference
 
-![alt text](/asset/image31.png)
+![alt text](/assest/image31.png)
 
 
 **⭕Q63 --> what is promise and explain it**
@@ -941,4 +941,4 @@ try{
 
 * Supports chaining and error handling
 
-![alt text](/asset/7.png)
+![alt text](/assest/7.png)
