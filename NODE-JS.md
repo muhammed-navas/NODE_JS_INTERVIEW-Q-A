@@ -925,3 +925,20 @@ try{
 🔍 Difference
 
 ![alt text](/assest/image31.png)
+
+
+**⭕Q63 --> what is promise and explain it**
+
+(a) 
+
+* A Promise in Node.js represents the eventual completion or failure of an asynchronous operation. It allows you to write cleaner, non-blocking code than traditional callbacks.
+
+✅ Why Use Promises?
+
+* Avoid callback hell (deeply nested callbacks)
+
+* Make async code easier to read, write, and debug
+
+* Supports chaining and error handling
+
+![alt text](/assest/7.png)
