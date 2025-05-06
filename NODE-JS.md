@@ -764,7 +764,7 @@ try{
 * catch method is used promises for error handle
 * .catch() method will be called if the Promise is rejected.
 
-![alt text](/assest/image29.png.png)
+![alt text](/assest/image29.png)
 
 
 **⭕Q55 --> How to handle errors while using async-await?**
@@ -773,6 +773,155 @@ try{
 
 * try-catch block is used with async-await for handle errors 
 
-![alt text](/assest/image30.png.png)
+![alt text](/assest/image30.png)
 
 
+
+**⭕Q56 --> What are streams in Node.js and how do they work?**
+
+(a)
+
+* Streams are a way to handle large amounts of data in a memory-efficient way.
+
+* Streams are a way to handle reading/writing files, network communications, or any kind of end-to-end information exchange in an efficient way. They can be readable, writable, or both (duplex) and allow processing data piece by piece without loading the entire data into memory.
+
+![alt text](/assest/31.png)
+
+
+**⭕Q57 --> How do you identify and fix memory leaks in a Node.js application?**
+
+(a) 
+
+* Unmanaged closures
+* Global variables
+* Event listeners not being removed
+* Circular references
+
+🤎To identify and fix them:
+
+* Use tools like heapdump or Chrome DevTools
+* Monitor memory usage with process.memoryUsage()
+* Properly manage event listeners
+* Implement proper garbage collection practices
+
+✅ **clinic.js** — full performance analysis.
+
+✅ **memwatch-next** — leak detection.
+
+✅ **heapdump** — take heap snapshots for offline analysis.
+
+
+
+**⭕Q58 --> How would you implement logging and monitoring in a Node.js application?**
+
+(a) 
+
+🧊 Using a structured logging library (Winston, Bunyan)
+🧊 Log rotation and management
+🧊 Centralized logging systems
+🧊 Application performance monitoring (APM)
+🧊 Health checks
+
+
+
+**⭕Q59 --> What are the key security considerations in a Node.js/Express application?**
+
+(a) 
+
+🥮 Input validation
+🥮 Using security middleware (Helmet, CORS)
+🥮 Implementing proper authentication and authorization
+🥮 Preventing common web vulnerabilities (XSS, CSRF, SQL Injection)
+🥮 Keeping dependencies up to date
+🥮 Setting proper HTTP headers
+
+
+
+**⭕Q60 --> Explain Buffer and Stream in Node.js with examples**
+
+(a)
+
+🥦 Buffers are temporary storage for binary data
+
+🥦 Streams allow processing data in chunks without loading entire content into memory
+
+🥦 Pipes connect streams together for efficient data flow
+
+
+![alt text](/assest/2.png)  ![alt text](/assest/3.png)
+
+
+**⭕Q61 --> What is libuv? What is its role in Node.js?**
+
+(a) 
+
+* libuv is a multi-platform C library that provides support for asynchronous I/O based operations. Node.js uses libuv to handle many of its core functionalities, abstracting away the differences in underlying operating system mechanisms (like epoll on Linux, kqueue on macOS, IOCP on Windows).
+
+♻ Key Roles of libuv:
+
+👉 Event Loop Implementation: libuv provides the event loop that Node.js uses.
+
+👉 Asynchronous I/O: Handles file system operations, networking (TCP/UDP sockets), DNS lookups, etc., asynchronously.
+
+👉 Threading: While Node.js is single-threaded for your JavaScript code, libuv maintains a thread pool for operations that are blocking at the OS level or are CPU-intensive and can be parallelized (e.g., some crypto functions, zlib, DNS lookups via getaddrinfo). This prevents the main Node.js thread from blocking.
+
+👉 Timers: Manages timers (setTimeout, setInterval).
+
+👉 Child Processes: Handles spawning and managing child processes.
+
+👉 Cross-platform Abstraction: Provides a consistent API across different operating systems.
+
+👉 Conceptual Relation:
+   * Your JavaScript Code  ->  Node.js Bindings (C++)  ->  libuv  ->  Operating System Kernel
+
+
+**⭕Q62 --> Explain Clustering in Node.js**
+
+(a)
+* Clustering in Node.js allows you to leverage multi-core systems by running multiple instances of your Node.js app, each on a separate CPU core. This helps you scale your application beyond the limitations of a single thread (since Node.js is single-threaded by default).
+
+🧠 Why Use Clustering?
+
+* Node.js runs on a single thread, so it can only use one CPU core.
+
+* On multi-core machines, clustering allows you to handle more requests concurrently.
+
+* Improves performance and fault tolerance.
+
+![alt text](/assest/4.png)
+
+📈 Benefits of Clustering : - 
+
+🚀 Utilizes all CPU cores.
+
+🔁 Increases throughput.
+
+🛡️ Fault isolation (if one worker crashes, others keep running).
+
+
+**⭕Q63 --> Explain params and query in node.js**
+
+(a) 
+
+📌 1. Route Params (req.params)
+----------------------------------------
+👍 Used for: Getting data from URL path segments.
+
+👍 Defined in routes using :paramName
+
+👍 Commonly used for resource identifiers like user ID, product ID, etc.
+
+![alt text](/assest/5.png)
+
+
+📌 2. Query Strings (req.query)
+---------------------------------------
+👍 Used for: Getting optional key-value pairs from the URL after the ?
+
+👍 Common for filters, pagination, sorting, search, etc.
+
+![alt text](/assest/6.png)
+
+🔍 Difference
+
+![alt text](/assest/image31.png)
