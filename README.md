@@ -658,7 +658,7 @@ console.log(obj); // { name: 'John', age: 30 }
 
 
 
-**⭕Q45 --> What are Authentication and Authorization?**
+**⭕Q46 --> What are Authentication and Authorization?**
 
 (a)
 
@@ -670,13 +670,13 @@ console.log(obj); // { name: 'John', age: 30 }
 ![alt text](/assest/image23.png) ![alt text](/assest/image24.png)
 
 
-**⭕Q45 --> What are the types of authentication in Node.js?**
+**⭕Q47 --> What are the types of authentication in Node.js?**
 
 
 ![alt text](/assest/image25.png)
 
 
-**⭕Q45 --> What is Basic Authentication?**
+**⭕Q48 --> What is Basic Authentication?**
 
 (a)
 * In Basic Authentication, the user passes their credentials on a post request. At the Node Rest API end, credentials are verified, and response is sent back.
@@ -685,7 +685,7 @@ console.log(obj); // { name: 'John', age: 30 }
 authentication.
 
 
-**⭕Q45 --> What are the security risks associated with storing passwords in plain text in Node.js?**
+**⭕Q49 --> What are the security risks associated with storing passwords in plain text in Node.js?**
 
 (a) 
 *  Unauthorized Access: Storing passwords in plain text means that anyone with access to the storage location, such as a database or configuration file, can easily read and extract passwords.
@@ -693,7 +693,7 @@ authentication.
 * Compromise of Other Accounts: Many users tend to reuse passwords across multiple accounts, allowing attackers to access to multiple accounts.
 
 
-**⭕Q45 --> What is the role of Hashing and Salt in securing passwords?**
+**⭕Q50 --> What is the role of Hashing and Salt in securing passwords?**
 
 (a)
 * Hashing: Hashing is a process of converting a password into a fixed- size string of characters using a mathematical algorithm.
@@ -702,7 +702,7 @@ authentication.
 ![alt text](/assest/image26.png) ![alt text](/assest/image27.png)
 
 
-**⭕Q45 --> What is Token based and JWT authentication?**
+**⭕Q51 --> What is Token based and JWT authentication?**
 
 
 (a)
@@ -724,8 +724,55 @@ authentication.
 
 
 
-**⭕Q45 --> What is Error Handling? In how many ways you can do error handling in Node.js?**
+**⭕Q52 --> What is Error Handling? In how many ways you can do error handling in Node.js?**
 
 (a)
 * Error handling is the process of identifying and responding to errors that occur during the execution of a program.
+
+![alt text](/assest/image28.png)
+
+
+
+**⭕Q53 --> How to handle errors in synchronous operations using try-catch-finally?**
+
+(a) 
+✅ 1. TRY - A try block is a block of code inside which any error can occur.
+
+✅ 2. CATCH - When any error occur in TRY block then it is passed to catch block to handle it.
+
+✅ 3. FINALLY - The finally block is used to execute a given set of statements, whether an exception occur or not.
+
+try{
+  const a = 9 
+  if(a<8){
+    console.log('try')
+
+  }else{
+    throw new Error('this is error')
+  }
+}catch(err){
+    console.log('error ')
+}finally{
+    console.log('final ')
+}
+// output : - this is error ,// final 
+
+
+**⭕Q54 --> How to handle errors using Promises?**
+
+(a)
+* catch method is used promises for error handle
+* .catch() method will be called if the Promise is rejected.
+
+![alt text](/assest/image29.png.png)
+
+
+**⭕Q55 --> How to handle errors while using async-await?**
+
+(a)
+
+* try-catch block is used with async-await for handle errors 
+
+![alt text](/assest/image30.png.png)
+
 
