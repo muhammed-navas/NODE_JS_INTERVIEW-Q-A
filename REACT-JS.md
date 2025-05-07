@@ -569,3 +569,232 @@ Q10. Is it possible to use JSX without React?
 ✅ Yes, it is technically possible to use JSX without React, but it requires a custom setup.
 
 ![alt text](/assest/react/image12.png)
+
+
+
+
+Q2. What are the Types of React components? What are Functional Components? 
+
+(a) 
+
+//functional components
+✅ functional components are declared as a javascrit function 
+
+✅ ther are stateless components , but with the help of hooks , they can now manage stete also 
+
+
+![alt text](/assest/react/image13.png)
+
+
+
+
+Q4. What is Prop Drilling in React?
+
+(a)
+
+✅ prop Drilling the process of passing down props through multiple layers of components
+
+function App() {
+  const user = "Alice";
+  return <Parent user={user} />;
+}
+
+function Parent({ user }) {
+  return <Child user={user} />;
+}
+
+function Child({ user }) {
+  return <GrandChild user={user} />;
+}
+
+function GrandChild({ user }) {
+  return <h1>Hello, {user}!</h1>;
+}
+
+![alt text](/assest/react/image15.png)
+--
+![alt text](/assest/react/image14.png)
+
+
+Q5. Why to Avoid Prop Drilling? In how many ways can avoid Prop Drilling?
+
+(a) 
+
+👉 Why to avoid Prop Drilling:
+
+✅ 1. Maintenance: Prop drilling can make code harder to maintain as changes in data
+flow require updates across multiple components.
+
+✅ 2. Complexity: It increases code complexity and reduces code readability.
+
+✅ 3. Debugging: Debugging becomes challenging when props need to be traced through numerous components.
+
+ 👉 Ways to Avoid Prop Drilling in React
+
+1️⃣ React Context API (Most Common)
+
+2️⃣ State Management Libraries (  Redux, MobX, Recoil, Zustand )
+
+3️⃣ Component Composition (Children/Render Props)
+
+4️⃣ Custom Hooks
+
+
+
+Q6. What are Class Components In React?
+
+(a) 
+
+✅ Class components are defined using JavaScript classes.
+
+✅ They are stateful components by using the lifecycle methods.
+
+✅ The render method in a class component is responsible for returning JSX.
+
+
+
+
+Q9. What are the 5 differences btw Functional components & Class components?
+
+(a) 
+
+✅ Functional components are simpler and preferred in modern React.
+
+✅ Class components are older and still valid, especially in legacy codebases.
+
+![alt text](/assest/react/image16.png)
+
+
+
+
+Q1. What is Routing and Router in React?
+
+(a) 
+
+✅ Routing allows you to create a single- page web application with navigation, without the need for a full-page refresh.
+
+✅ eact Router is a library for handling routing and enables navigation and React Router rendering of different components based on the URL.
+
+Q3. What are the roles of <Routes> & <Route> component in React Routing?
+
+(a) 
+
+✅ The <Routes> component is used as the root container for declaring your collection of routes.
+
+✅ The <Route> component is used to define a route and specify the component that should render when the route matches.
+
+   * For example, in this code if user enter "websitename.com/about" in url, then matching "About" component will be rendered.
+
+
+ 
+Q4. What are Route Parameters in React Routing?
+
+(a) 
+
+✅ Route parameters in React Router are a way to pass dynamic values(data) to the component as part of the URL path.
+
+
+
+Q1. What are React Hooks? What are the Top React Hooks?
+
+(a) 
+
+✅ 1. React Hooks are inbuilt functions provided by React that allow functional components to use state and lifecycle features.
+
+✅ 2. Before Hooks, class components lifecycle methods were used to maintain state in React applications.
+
+✅ 3. To use React Hook first we first have to import it from React library:
+
+![alt text](/assest/react/image17.png)
+
+
+ Q3. What is the role of useState() hook and how it works?
+
+ (a) 
+
+✅ The useState hook enables functional components to manage state.
+
+✅ useState() working: usestate() function accept the initial state value as the parameter and returns an array with two elements:
+
+    1. The first element is the current state value (count in this code).
+    2. Second element is the function that is used to update the state (setCount in this code).
+
+✅ The concept of assign array elements to individual variables is called array destructuring.
+
+
+import React ,{ useState} from 'react';
+
+export function App(props) {
+
+const [ state ,setState ] = useState()
+  return (
+    <div className='App'>
+      <h1>hello</h1>
+    </div>
+  );
+
+}
+
+![alt text](/assest/react/image18.png)
+
+Q4. What is the role of useEffect(). How it works and what is its use?
+
+(a) 
+
+✅ The useEffect Hook in React is used to perform side effects in functional components.
+
+✅ For example, data fetching from API, subscriptions ,DOM manipulation or any other operation that needs to be performed after the component has been rendered.
+
+✅ use Effect() is called after the component renders. Example, side effects.
+
+✅ use Effect() function will accept two parameter: (Effect function, dependency array).
+
+useEffect(() => {
+  fetch("https://api.example.com/data")
+    .then(res => res.json())
+    .then(data => setData(data));
+}, []); // runs once after first render
+
+
+Q5. What is Dependency Array in useEffect() hook?
+
+(a) 
+
+✅ Dependencies arrays(optional) act as triggers for use Effect to rerun; meaning if any of dependencies values change, the code inside useEffect() will be executed again.
+
+✅ To control how often and when the effect runs.
+
+✅ It helps React optimize performance by avoiding unnecessary re-runs of the effect.
+
+
+Q6. What is the meaning of the empty array [] in the useEffect()?
+
+(a) 
+
+✅ An empty array indicates that the effect function should only one run 
+
+✅ Fetching data once
+
+✅ Initializing a library or subscription
+
+✅ Setting up event listeners (with cleanup)
+
+🔍 The empty array tells React:
+
+“This effect has no dependencies — nothing to watch for changes.”
+
+✅ So React runs the effect once (when the component is mounted), and never again.
+
+✅ This behavior is similar to the componentDidMount() lifecycle method in class components.
+
+
+import React, { useEffect } from 'react';
+
+function App() {
+  useEffect(() => {
+    console.log('Runs only once, when component mounts');
+  }, []); // <- empty array here
+
+  return <div>Hello, React!</div>;
+}
+
