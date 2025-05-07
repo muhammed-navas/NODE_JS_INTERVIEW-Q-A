@@ -1,3 +1,6 @@
+* default export and named export in react ? // ----------- (q.15)
+
+
 
 
 Q1. What is React?
@@ -314,3 +317,255 @@ function App() {
     </div>
   );
 }
+
+
+<details>
+<summary><b>⭕ Q14: What is NPM? What is the role of node_modules folder?</b></summary>
+
+* **NPM (Node Package Manager)** is used to manage the dependencies for your Node project.
+
+* **node_modules** folder contains all the dependencies of the node project.
+</details>
+
+Q5. What is the role of index.js file and ReactDOM in React? 
+
+(a) 
+
+✅ ReactDOM is a JavaScript library that renders components to the DOM or browser.
+
+✅ The index.js file is the JavaScript file that replaces the root element of the index.html file with the newly rendered components.
+
+//html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="src/index.jsx"></script>
+  </body>
+</html>
+
+//react
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+      <App />
+  </StrictMode>
+);
+
+
+Q3. What is Babel?
+
+(a) 
+
+✅ Babel in React is used to transpile JSX syntax into regular JavaScript which browser can understand.
+
+✅ Converts JSX into valid JavaScript.
+
+✅ Transforms modern JS syntax (like arrow functions, async/await, destructuring).
+
+✅ Ensures browser compatibility by compiling code down to ES5.
+
+![alt text](/assest/react/image8.png)
+
+
+Q4. What is the role of Fragment in JSX?
+
+(a) 
+✅ In JSX, you can only return one parent element from a component. If you need to return multiple sibling elements, you can:
+
+✅ Wrap them in a <div> (adds extra node to DOM)
+
+✅ Use a <React.Fragment> or <> (cleaner)
+
+import React from 'react';
+import {Fragment} from 'react';
+
+function ListItems() {
+  return (
+    <Fragment>
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Cherry</li>
+    </Fragment>
+  );
+}
+or 
+function ListItems() {
+  return (
+    <>
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Cherry</li>
+    </>
+  );
+}
+
+Q5. What is Spread Operator in JSX?
+
+(a) 
+
+✅ the Spread Operator (...) is used to expand or spread an array or object 
+
+✅ The spread operator (...) in JavaScript is used to unpack elements from arrays or copy/spread properties from objects. In JSX (React), it's often used to pass props dynamically. 
+
+
+import React from 'react';
+
+export function App(props) {
+  
+  const user = {
+  name: "Alice",
+  age: 25,
+  location: "New York"
+};
+  return (
+    <div className='App'>
+     <Profile {...user}  /> 
+    </div>
+  );
+
+}
+
+function Profile(props) {
+  return (
+    <div>
+      <h2>{props.name}</h2> 
+      <p>{props.age} years old</p>
+      <p>From {props.location}</p>
+    </div>
+  );
+}
+
+✅ Used for copying, merging, and updating objects or arrays.
+
+//array 
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];  // [1, 2, 3, 4, 5]
+
+//object 
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1, c: 3 };  // { a: 1, b: 2, c: 3 }
+
+
+
+Q6. What are the types of Conditional Rendering in JSX? 
+
+(a) 
+
+![alt text](/assest/react/image9.png)
+
+1️⃣ if-else Statement (outside JSX)
+
+  ✅ Use this when logic is too complex to include inline inside JSX.
+
+  function Greeting({ isLoggedIn }) {
+  if (isLoggedIn) {
+    return <h1>Welcome back!</h1>;
+  } else {
+    return <h1>Please sign in.</h1>;
+  }
+}
+
+2️⃣ Ternary Operator condition ? true : false
+
+   ✅ Use this inline in JSX for concise rendering:
+
+   function Status({ online }) {
+  return (
+    <div>
+      {online ? <p>Online ✅</p> : <p>Offline ❌</p>}
+    </div>
+  );
+}
+
+3️⃣ Logical AND Operator &&
+
+    ✅ Render a component only if the condition is true (good for optional rendering).
+
+    function Notification({ getData }) {
+  return (
+    <div>
+      {getData.length > 0 && <p>You getData is success</p>}
+    </div>
+  );
+}
+
+4️⃣ switch-case (outside JSX)
+
+✅ Useful when you have multiple conditions to handle.
+
+function RenderComponent({ role }) {
+  switch (role) {
+    case 'admin':
+      return <h2>Admin Panel</h2>;
+    case 'user':
+      return <h2>User Dashboard</h2>;
+    case 'guest':
+      return <h2>Guest View</h2>;
+    default:
+      return <h2>Unknown Role</h2>;
+  }
+}
+
+🧠 Summary Table:
+
+![alt text](/assest/react/image10.png)
+
+
+
+Q7. How do you iterate over a list in JSX? What is map() method?
+
+(a) 
+
+✅ Creates a new array by applying a function to each item in an existing array.
+
+✅ map() does not modify the original array
+
+✅ Used often in React for rendering lists.
+
+✅ the key(prop) Required for list items for React's internal tracking
+
+
+function FruitList() {
+  const fruits = ["Apple", "Banana", "Cherry"];
+
+  return (
+    <ul>
+      {fruits.map((fruit) => (
+        <li key={fruit}>{fruit}</li>
+      ))}
+    </ul>
+  );
+}
+
+
+Q9. What is Transpiler? What is the difference between Compiler & Transpile
+
+(a) 
+✅ A Transpiler is a tool that converts source code from one high-level programming language(JSX) to another high-level
+programming language(JavaScript).
+// Example: Babel
+
+✅ A compiler is a tool that converts high-level programming language(Java) into a lower- level language(machine code or bytecode).
+
+![alt text](/assest/react/image11.png)
+
+
+
+Q10. Is it possible to use JSX without React?
+
+(a) 
+
+✅ Yes, it is technically possible to use JSX without React, but it requires a custom setup.
+
+![alt text](/assest/react/image12.png)
