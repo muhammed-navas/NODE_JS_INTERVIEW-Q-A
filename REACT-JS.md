@@ -10,18 +10,18 @@ Q1. What is React?
 Q2. What are the Key Features of React?
 
 (a) 
-![alt text](/assest/react/image.png.png)
+![alt text](/assest/react/image.png)
 
 Q3. What is DOM? What is the difference between HTML and DOM? 
 
 (a) 
 ✅ DOM(Document Object Model) represents the web page as a tree-like structure which allows JavaScript to dynamically access and manipulate the content and structure of a web page.
 
-![alt text](/assest/react/image1.png.png)
+![alt text](/assest/react/image1.png)
 
 🔄 Difference Between HTML and DOM:
 
-![alt text](/assest/react/image2.png.png)
+![alt text](/assest/react/image2.png)
 
 Q4. What is Virtual DOM? Difference between DOM and Virtual DOM?
 
@@ -33,9 +33,9 @@ Q4. What is Virtual DOM? Difference between DOM and Virtual DOM?
 
 ✅ The new virtual DOM is compared with the previous one (using a process called diffing).
 
-![alt text](/assest/react/image3.png.png)
+![alt text](/assest/react/image3.png)
 
-![alt text](/assest/react/image4.png.png)
+![alt text](/assest/react/image4.png)
 
 
 Q5. What is Reconciliation in React?
@@ -166,7 +166,7 @@ Q11. What is the difference between React and Angular?
 
 ✅ Angular is a complete framework with more built-in features but a steeper learning curve.
 
-![alt text](/assest/react/image6.png.png)
+![alt text](/assest/react/image6.png)
 
 
 Q12. Whether React is a Framework or a Library? What is the difference?
@@ -178,7 +178,7 @@ Q12. Whether React is a Framework or a Library? What is the difference?
 
 ✅ A framework (like Angular) includes most of these features out of the box.
 
-![alt text](/assest/react/image7.png.png)
+![alt text](/assest/react/image7.png)
 
 
 Q13. How React provides Reusability and Composition?
