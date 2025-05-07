@@ -81,7 +81,7 @@ Q5. What is Reconciliation in React?
 ✅ Whenever user do some action on the website, then in response content is dynamically updated without refreshing or loading a new page.
 
 
-Q9. What is the role of JSX in React? 
+Q8. What is the role of JSX in React? 
 
 (a)
 ✅ JSX stands for javascript XML  
@@ -103,7 +103,7 @@ const Welcome = (props) => {
 ✅ This transformation is handled by Babel, a JavaScript compile
 
 
-Q10. What is the difference between Declarative & Imperative syntax?
+Q9. What is the difference between Declarative & Imperative syntax?
 
 (a)
 
@@ -145,7 +145,7 @@ document.body.appendChild(button);
 
 
 
-Q1. What is Arrow Function Expression in JSX? 
+Q10. What is Arrow Function Expression in JSX? 
 
 (a) 
 ✅ An Arrow Function Expression in JSX refers to using JavaScript arrow functions (=>) directly inside JSX, often for event handling, inline rendering, or short functional logic.
@@ -157,7 +157,7 @@ Q1. What is Arrow Function Expression in JSX?
 * Here, () => alert('Clicked!') is an arrow function expression used inline inside JSX.
 
 
-Q5. What is the difference between React and Angular?
+Q11. What is the difference between React and Angular?
 
 (a) 
 ✅ React and Angular are two of the most popular frameworks/libraries for building modern web applications — but they differ significantly in architecture, philosophy, and usage.
@@ -169,7 +169,148 @@ Q5. What is the difference between React and Angular?
 ![alt text](/assest/react/image6.png.png)
 
 
-Q6. What are other 5 JS frameworks other than React?
-Q7. Whether React is a Framework or a Library? What is the difference?
-Q8. How React provides Reusability and Composition?
-Q9. What are State, Stateless, Stateful and State Management terms? Q10. What are Props n JSX?
+Q12. Whether React is a Framework or a Library? What is the difference?
+
+(a)
+✅ React = Library: Focuses only on the view/UI layer.
+
+✅ You’re free to pick your own stack for routing (e.g., React Router), state (e.g., Redux, Zustand), or data (e.g., Axios, TanStack Query).
+
+✅ A framework (like Angular) includes most of these features out of the box.
+
+![alt text](/assest/react/image7.png.png)
+
+
+Q13. How React provides Reusability and Composition?
+
+(a) 
+
+✅ React provides reusability and composition through its component-based architecture.
+
+✅ **Reusability:-** Once you create a component, you can re-use it in different parts of your application or even in multiple projects.
+
+👉 React promotes DRY (Don’t Repeat Yourself) by encouraging you to:
+
+✅ Write once, reuse anywhere – Components are just JavaScript functions.
+
+✅ Parameterize components with props to change behavior or content.
+
+✅ Create UI libraries of reusable components (e.g., buttons, inputs, cards).
+
+function Button({ label, onClick }) {
+  return <button onClick={onClick}>{label}</button>;
+}
+
+// Reuse:
+<Button label="Save" onClick={handleSave} />
+<Button label="Cancel" onClick={handleCancel} />
+
+
+✅ **Composition:-** Composition is creating new and big components by combining existing small components. Its advantage is, change to one small component will not impact other
+components.
+
+✅ Composition is the idea of nesting components inside others to build larger pieces of the UI from small, simple parts.
+
+✅ React prefers composition over inheritance, allowing flexibility and modularity.
+
+function Card({ title, children }) {
+  return (
+    <div className="card">
+      <h2>{title}</h2>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Card title="Welcome">
+      <p>This is the card content!</p>
+    </Card>
+  );
+}
+
+
+
+Q14. What are State, Stateless, Stateful and State Management terms?
+
+(a)
+🧠 State in React:-  
+
+✅ Refers to how you store, update, and share state across your application.
+✅ "state" refer to the current data of the component
+
+🧠 Stateless Component:-
+
+✅ A stateless component does not manage or store state.
+✅ It only receives props and renders UI.
+
+import React from 'react';
+
+export function App(props) {
+  let count = 0 
+
+  const clickHandle  = () =>{
+    count += 1 
+    console.log(count,'this is count')
+  }
+  return (
+    <div className='App'>
+      <h1>{count}</h1>
+      <button onClick={clickHandle}> clicck me </button>
+    </div>
+  );
+}
+
+🧠 Stateful Component
+
+✅ A stateful component has its own internal state using useState, useReducer, or class-based this.state.
+
+✅ It controls dynamic behavior.
+
+✅ Stateful or state management means, when a user performs some actions on the UI, then the React application should be able to update and re-render that data or state on the UI.
+
+import React,{useState} from 'react';
+
+export function App(props) {
+  const [count ,setCount] = useState(0)
+
+  const clickHandle  = () =>{
+    setCount(count+1)
+  }
+  return (
+    <div className='App'>
+      <h1>{count}</h1>
+      <button onClick={clickHandle}> clicck me </button>
+    </div>
+  );
+}
+
+
+ Q15. What are Props n JSX?
+
+ (a) 
+
+✅ props( properties ) are way to pass data from parent component to child component
+
+✅ Props are read-only 
+
+✅ Props are immutable inside the component.
+
+✅ Enables component reusability and dynamic rendering.
+
+✅ Can pass any data: strings, numbers, arrays, functions, even components.
+
+function Greeting(props) {
+  return <p>Good Morning, {props.name}!</p>;
+}
+
+
+function App() {
+  return (
+    <div>
+      <Greeting name="John" /> // Good Morning,John
+      <Greeting name="Sarah" /> // Good Morning,Sarah
+    </div>
+  );
+}
