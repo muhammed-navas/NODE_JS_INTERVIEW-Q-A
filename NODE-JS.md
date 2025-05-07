@@ -31,7 +31,7 @@
 ❎ **not** a framework  
 ✅ a runtime environment
 
-![Node.js Structure](</assest/WhatsApp%20Image%202025-05-05%20at%2015.07.58_4cf886ac.jpg>)
+![Node.js Structure](</assest/node/WhatsApp%20Image%202025-05-05%20at%2015.07.58_4cf886ac.jpg>)
 </details>
 
 <details>
@@ -74,9 +74,9 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 <details>
 <summary><b>⭕ Q5: What are the differences between Client-Side (Browser) and Server-Side (Node.js)?</b></summary>
 
-![Client vs Server Side 1](/assest/image1.png)
+![Client vs Server Side 1](/assest/node/image1.png)
 
-![Client vs Server Side 2](/assest/image.png)
+![Client vs Server Side 2](/assest/node/image.png)
 </details>
 
 ## Section 2: Node.js Architecture
@@ -86,7 +86,7 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 
 * A single-threaded programming language executes code sequentially in a single thread, meaning it processes one instruction at a time. This means that if one task is taking longer, the entire program must wait, and multiple tasks cannot be processed simultaneously. 
 
-![Single Thread](/assest/image2.png)
+![Single Thread](/assest/node/image2.png)
 </details>
 
 <details>
@@ -101,7 +101,7 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 
 * Multithreaded programming involves dividing a program's execution into multiple independent threads, allowing them to run concurrently, potentially improving performance and responsiveness. Each thread can execute its instructions independently while sharing the same memory space and resources of the parent process. 
 
-![Multi Thread](/assest/image3.png)
+![Multi Thread](/assest/node/image3.png)
 </details>
 
 <details>
@@ -119,7 +119,7 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 <details>
 <summary><b>⭕ Q10: What is the difference between Synchronous & Asynchronous programming?</b></summary>
 
-![Sync vs Async](/assest/image4.png)
+![Sync vs Async](/assest/node/image4.png)
 </details>
 
 <details>
@@ -132,13 +132,13 @@ Microsoft's JavaScript engine, with a C API that allows embedding in other appli
 * **Event Loop**: The event loop picks up event from the event queue and executes them in the order they were added.
 * **Event Driven Architecture**: It means operations in Node are drive or based by events.
 
-![Event Architecture](/assest/image5.png)
+![Event Architecture](/assest/node/image5.png)
 </details>
 
 <details>
 <summary><b>⭕ Q12 & Q13: What are the main features & advantages of Node.js?</b></summary>
 
-![Features and Advantages](/assest/image6.png)
+![Features and Advantages](/assest/node/image6.png)
 
 * **When to Use Node.js**: 
   * ✓ Ideal for real-time applications like chat applications, online gaming, and collaborative tools due to its event-driven architecture.
@@ -320,7 +320,7 @@ Express supports various template engines (like EJS, Pug, Handlebars), enabling 
 * A middleware in Express.js is a function that handles HTTP requests, performs operations, and passes control to the next middleware.
 * Middleware can be used for various purposes such as authentication, logging, error handling, and more.
 
-![Middleware Flow](/assest/image7.png)
+![Middleware Flow](/assest/node/image7.png)
 </details>
 
 <details>
@@ -505,13 +505,13 @@ app.listen(3000, () => {
 <details>
 <summary><b>⭕ Q29: Can you summarize all the type of middleware's?</b></summary>
 
-![Middleware Types](/assest/image8.png)
+![Middleware Types](/assest/node/image8.png)
 </details>
 
 <details>
 <summary><b>⭕ Q30: What are the advantages of using middleware in Express.js?</b></summary>
 
-![Middleware Advantages](/assest/image9.png)
+![Middleware Advantages](/assest/node/image9.png)
 </details>
 
 <details>
@@ -519,7 +519,7 @@ app.listen(3000, () => {
 
 * Routing is the process of directing incoming HTTP requests to the appropriate handler function based on the request method (eg. GET, POST, PUT, DELETE) and the URL path.
 
-![Routing](/assest/image10.png)
+![Routing](/assest/node/image10.png)
 </details>
 
 <details>
@@ -542,19 +542,19 @@ app.listen(3000, () => {
 
 * Template engines are libraries that enable developers to generate dynamic HTML content by combining static HTML templates with data.
 
-![Template Engines](/assest/image11.png)
+![Template Engines](/assest/node/image11.png)
 </details>
 
 <details>
 <summary><b>⭕ Q34: Name some Template Engines libraries?</b></summary>
 
-![Template Engine Libraries](/assest/image12.png)
+![Template Engine Libraries](/assest/node/image12.png)
 </details>
 
 <details>
 <summary><b>⭕ Q35: What are HTTP Request and Response structures in UI and REST API?</b></summary>
 
-![HTTP Request and Response](/assest/image13.png)
+![HTTP Request and Response](/assest/node/image13.png)
 </details>
 
 ## Section 6: RESTful APIs
@@ -599,13 +599,13 @@ app.listen(3000, () => {
 <details>
 <summary><b>⭕ Q37: What are GET, POST, PUT & DELETE HTTP methods?</b></summary>
 
-![HTTP Methods](/assest/image14.png)
+![HTTP Methods](/assest/node/image14.png)
 </details>
 
 <details>
 <summary><b>⭕ Q38: What is the difference between PUT & PATCH methods?</b></summary>
 
-![PUT vs PATCH](/assest/image15.png)
+![PUT vs PATCH](/assest/node/image15.png)
 </details>
 
 <details>
@@ -613,7 +613,7 @@ app.listen(3000, () => {
 
 * Status codes are used to indicate the outcome of a request.
 
-![Status Codes](/assest/image16.png)
+![Status Codes](/assest/node/image16.png)
 </details>
 
 <details>
@@ -621,7 +621,7 @@ app.listen(3000, () => {
 
 * CORS (Cross-Origin Resource Sharing) is a security feature implemented in web browsers that restricts web pages or scripts from making requests to a different domain than the one that served the web page.
 
-![CORS](/assest/image17.png)
+![CORS](/assest/node/image17.png)
 
 ✅ 1. is correct 
 
@@ -641,13 +641,13 @@ app.listen(3000, () => {
 
 * **Deserialization** is the process of converting a serialized object back into its original form.
 
-![Serialization & Deserialization](/assest/image18.png)
+![Serialization & Deserialization](/assest/node/image18.png)
 </details>
 
 <details>
 <summary><b>⭕ Q42: What are the types of serialization?</b></summary>
 
-![Serialization Types](/assest/image19.png)
+![Serialization Types](/assest/node/image19.png)
 </details>
 
 <details>
@@ -675,11 +675,11 @@ console.log(obj); // { name: 'John', age: 30 }
 
 * An API document describes the functionality, features and usage of REST API 
 
-![API Documentation](/assest/image20.png.png)
+![API Documentation](/assest/node/image20.png)
 
 * Popular API documentation tools
 
-![API Documentation Tools](/assest/image21.png)
+![API Documentation Tools](/assest/node/image21.png)
 </details>
 
 <details>
@@ -701,7 +701,7 @@ console.log(obj); // { name: 'John', age: 30 }
 
 * **package.json**: The file that contains metadata about the project and its dependencies.
 
-![REST API Structure](/assest/image22.png)
+![REST API Structure](/assest/node/image22.png)
 </details>
 
 <details>
@@ -713,13 +713,13 @@ console.log(obj); // { name: 'John', age: 30 }
 
 * Authentication always precedes Authorization.
 
-![Authentication vs Authorization](/assest/image23.png) ![Authentication vs Authorization](/assest/image24.png)
+![Authentication vs Authorization](/assest/node/image23.png) ![Authentication vs Authorization](/assest/node/image24.png)
 </details>
 
 <details>
 <summary><b>⭕ Q47: What are the types of authentication in Node.js?</b></summary>
 
-![Authentication Types](/assest/image25.png)
+![Authentication Types](/assest/node/image25.png)
 </details>
 
 <details>
@@ -743,7 +743,7 @@ console.log(obj); // { name: 'John', age: 30 }
 
 * **Hashing**: Hashing is a process of converting a password into a fixed-size string of characters using a mathematical algorithm.
 
-![Hashing and Salt](/assest/image26.png) ![Hashing and Salt](/assest/image27.png)
+![Hashing and Salt](/assest/node/image26.png) ![Hashing and Salt](/assest/node/image27.png)
 </details>
 
 <details>
@@ -771,7 +771,7 @@ console.log(obj); // { name: 'John', age: 30 }
 
 * **Error handling** is the process of identifying and responding to errors that occur during the execution of a program.
 
-![Error Handling](/assest/image28.png)
+![Error Handling](/assest/node/image28.png)
 </details>
 
 <details>
@@ -1067,7 +1067,7 @@ app.get('/users', (req, res) => {
 
 🔍 **Difference**
 
-![Params vs Query](/assest/image31.png)
+![Params vs Query](/assest/node/image31.png)
 </details>
 
 <details>
@@ -1106,3 +1106,4 @@ fetchUser(1)
   });
 ```
 </details>
+
