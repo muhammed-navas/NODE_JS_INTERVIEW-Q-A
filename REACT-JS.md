@@ -43,7 +43,7 @@ A comprehensive guide to React hooks and core concepts.
 ## React Hooks
 
 <details>
-<summary><b>⭕ Q1: What is React?</b></summary>
+<summary><h5>⭕ Q1: What is React?</h5></summary>
 
 ✅ React is an open-source JavaScript library 
 
@@ -53,13 +53,13 @@ A comprehensive guide to React hooks and core concepts.
 </details>
 
 <details>
-<summary><b>⭕ Q2: What are the Key Features of React?</b></summary>
+<summary><h5>⭕ Q2: What are the Key Features of React?</h5></summary>
 
 ![Key Features of React](/assest/react/image.png)
 </details>
 
 <details>
-<summary><b>⭕ Q3: What is DOM? What is the difference between HTML and DOM?</b></summary>
+<summary><h5>⭕ Q3: What is DOM? What is the difference between HTML and DOM?</h5></summary>
 
 ✅ DOM (Document Object Model) represents the web page as a tree-like structure which allows JavaScript to dynamically access and manipulate the content and structure of a web page.
 
@@ -71,7 +71,7 @@ A comprehensive guide to React hooks and core concepts.
 </details>
 
 <details>
-<summary><b>⭕ Q4: What is Virtual DOM? Difference between DOM and Virtual DOM?</b></summary>
+<summary><h5>⭕ Q4: What is Virtual DOM? Difference between DOM and Virtual DOM?</h5></summary>
 
 ✅ React uses a virtual DOM to efficiently update the UI without re-rendering the entire page, which helps improve performance and make the application more responsive.
 
@@ -85,7 +85,7 @@ A comprehensive guide to React hooks and core concepts.
 </details>
 
 <details>
-<summary><b>⭕ Q5: What is Reconciliation in React?</b></summary>
+<summary><h5>⭕ Q5: What is Reconciliation in React?</h5></summary>
 
 ✅ Reconciliation is the process React uses to update the DOM efficiently when the state or props of a component change.
 
@@ -107,7 +107,7 @@ A comprehensive guide to React hooks and core concepts.
 </details>
 
 <details>
-<summary><b>⭕ Q6: What are React Components?</b></summary>
+<summary><h5>⭕ Q6: What are React Components?</h5></summary>
 
 ✅ In React, a component is a reusable building block for creating user interface 
 
@@ -119,7 +119,7 @@ A comprehensive guide to React hooks and core concepts.
 </details>
 
 <details>
-<summary><b>⭕ Q7: What is SPA (Single Page Application)?</b></summary>
+<summary><h5>⭕ Q7: What is SPA (Single Page Application)?</h5></summary>
 
 ✅ A Single Page Application (SPA) is a web application that has only one single web page.
 
@@ -127,7 +127,7 @@ A comprehensive guide to React hooks and core concepts.
 </details>
 
 <details>
-<summary><b>⭕ Q8: What is the role of JSX in React?</b></summary>
+<summary><h5>⭕ Q8: What is the role of JSX in React?</h5></summary>
 
 ✅ JSX stands for JavaScript XML  
 
@@ -151,7 +151,7 @@ const Welcome = (props) => {
 </details>
 
 <details>
-<summary><b>⭕ Q9: What is the difference between Declarative & Imperative syntax?</b></summary>
+<summary><h5>⭕ Q9: What is the difference between Declarative & Imperative syntax?</h5></summary>
 
 👉 Declarative
 
@@ -188,7 +188,7 @@ document.body.appendChild(button);
 </details>
 
 <details>
-<summary><b>⭕ Q10: What is Arrow Function Expression in JSX?</b></summary>
+<summary><h5>⭕ Q10: What is Arrow Function Expression in JSX?</h5></summary>
 
 ✅ An Arrow Function Expression in JSX refers to using JavaScript arrow functions (=>) directly inside JSX, often for event handling, inline rendering, or short functional logic.
 
@@ -202,7 +202,7 @@ document.body.appendChild(button);
 </details>
 
 <details>
-<summary><b>⭕ Q11: What is the difference between React and Angular?</b></summary>
+<summary><h5>⭕ Q11: What is the difference between React and Angular?</h5></summary>
 
 ✅ React and Angular are two of the most popular frameworks/libraries for building modern web applications — but they differ significantly in architecture, philosophy, and usage.
 
@@ -214,7 +214,7 @@ document.body.appendChild(button);
 </details>
 
 <details>
-<summary><b>⭕ Q12: Whether React is a Framework or a Library? What is the difference?</b></summary>
+<summary><h5>⭕ Q12: Whether React is a Framework or a Library? What is the difference?</h5></summary>
 
 ✅ React = Library: Focuses only on the view/UI layer.
 
@@ -226,7 +226,7 @@ document.body.appendChild(button);
 </details>
 
 <details>
-<summary><b>⭕ Q13: How React provides Reusability and Composition?</b></summary>
+<summary><h5>⭕ Q13: How React provides Reusability and Composition?</h5></summary>
 
 ✅ React provides reusability and composition through its component-based architecture.
 
@@ -277,7 +277,7 @@ function App() {
 </details>
 
 <details>
-<summary><b>⭕ Q14: What are State, Stateless, Stateful and State Management terms?</b></summary>
+<summary><h5>⭕ Q14: What are State, Stateless, Stateful and State Management terms?</h5></summary>
 
 🧠 State in React:  
 
@@ -336,7 +336,7 @@ export function App(props) {
 </details>
 
 <details>
-<summary><b>⭕ Q15: What are Props in JSX?</b></summary>
+<summary><h5>⭕ Q15: What are Props in JSX?</h5></summary>
 
 ✅ props (properties) are way to pass data from parent component to child component
 
@@ -366,7 +366,7 @@ function App() {
 </details>
 
 <details>
-<summary><b>⭕ Q16: What is NPM? What is the role of node_modules folder?</b></summary>
+<summary><h5>⭕ Q16: What is NPM? What is the role of node_modules folder?</h5></summary>
 
 * **NPM (Node Package Manager)** is used to manage the dependencies for your Node project.
 
@@ -374,7 +374,7 @@ function App() {
 </details>
 
 <details>
-<summary><b>⭕ Q17: What is the role of index.js file and ReactDOM in React?</b></summary>
+<summary><h5>⭕ Q17: What is the role of index.js file and ReactDOM in React?</h5></summary>
 
 ✅ ReactDOM is a JavaScript library that renders components to the DOM or browser.
 
@@ -413,7 +413,7 @@ createRoot(document.getElementById("root")).render(
 </details>
 
 <details>
-<summary><b>⭕ Q18: What is Babel?</b></summary>
+<summary><h5>⭕ Q18: What is Babel?</h5></summary>
 
 ✅ Babel in React is used to transpile JSX syntax into regular JavaScript which browser can understand.
 
@@ -427,7 +427,7 @@ createRoot(document.getElementById("root")).render(
 </details>
 
 <details>
-<summary><b>⭕ Q19: What is the role of Fragment in JSX?</b></summary>
+<summary><h5>⭕ Q19: What is the role of Fragment in JSX?</h5></summary>
 
 ✅ In JSX, you can only return one parent element from a component. If you need to return multiple sibling elements, you can:
 
@@ -464,7 +464,7 @@ function ListItems() {
 </details>
 
 <details>
-<summary><b>⭕ Q20: What is Spread Operator in JSX?</b></summary>
+<summary><h5>⭕ Q20: What is Spread Operator in JSX?</h5></summary>
 
 ✅ The Spread Operator (...) is used to expand or spread an array or object 
 
@@ -512,7 +512,7 @@ const obj2 = { ...obj1, c: 3 };  // { a: 1, b: 2, c: 3 }
 </details>
 
 <details>
-<summary><b>⭕ Q21: What are the types of Conditional Rendering in JSX?</b></summary>
+<summary><h5>⭕ Q21: What are the types of Conditional Rendering in JSX?</h5></summary>
 
 ![Conditional Rendering](/assest/react/image9.png)
 
@@ -583,7 +583,7 @@ function RenderComponent({ role }) {
 </details>
 
 <details>
-<summary><b>⭕ Q22: How do you iterate over a list in JSX? What is map() method?</b></summary>
+<summary><h5>⭕ Q22: How do you iterate over a list in JSX? What is map() method?</h5></summary>
 
 ✅ Creates a new array by applying a function to each item in an existing array.
 
@@ -609,7 +609,7 @@ function FruitList() {
 </details>
 
 <details>
-<summary><b>⭕ Q23: What is Transpiler? What is the difference between Compiler & Transpile?</b></summary>
+<summary><h5>⭕ Q23: What is Transpiler? What is the difference between Compiler & Transpile?</h5></summary>
 
 ✅ A Transpiler is a tool that converts source code from one high-level programming language (JSX) to another high-level programming language (JavaScript).
 // Example: Babel
@@ -620,7 +620,7 @@ function FruitList() {
 </details>
 
 <details>
-<summary><b>⭕ Q24: Is it possible to use JSX without React?</b></summary>
+<summary><h5>⭕ Q24: Is it possible to use JSX without React?</h5></summary>
 
 ✅ Yes, it is technically possible to use JSX without React, but it requires a custom setup.
 
@@ -628,7 +628,7 @@ function FruitList() {
 </details>
 
 <details>
-<summary><b>⭕ Q25: What are the Types of React components? What are Functional Components?</b></summary>
+<summary><h5>⭕ Q25: What are the Types of React components? What are Functional Components?</h5></summary>
 
 //functional components
 ✅ Functional components are declared as a JavaScript function 
@@ -639,7 +639,7 @@ function FruitList() {
 </details>
 
 <details>
-<summary><b>⭕ Q26: What is Prop Drilling in React?</b></summary>
+<summary><h5>⭕ Q26: What is Prop Drilling in React?</h5></summary>
 
 ✅ Prop Drilling the process of passing down props through multiple layers of components
 
@@ -668,7 +668,7 @@ function GrandChild({ user }) {
 </details>
 
 <details>
-<summary><b>⭕ Q27: Why to Avoid Prop Drilling? In how many ways can avoid Prop Drilling?</b></summary>
+<summary><h5>⭕ Q27: Why to Avoid Prop Drilling? In how many ways can avoid Prop Drilling?</h5></summary>
 
 👉 Why to avoid Prop Drilling:
 
@@ -690,7 +690,7 @@ function GrandChild({ user }) {
 </details>
 
 <details>
-<summary><b>⭕ Q28: What are Class Components In React?</b></summary>
+<summary><h5>⭕ Q28: What are Class Components In React?</h5></summary>
 
 ✅ Class components are defined using JavaScript classes.
 
@@ -700,7 +700,7 @@ function GrandChild({ user }) {
 </details>
 
 <details>
-<summary><b>⭕ Q29: What are the 5 differences btw Functional components & Class components?</b></summary>
+<summary><h5>⭕ Q29: What are the 5 differences btw Functional components & Class components?</h5></summary>
 
 ✅ Functional components are simpler and preferred in modern React.
 
@@ -710,7 +710,7 @@ function GrandChild({ user }) {
 </details>
 
 <details>
-<summary><b>⭕ Q30: What is Routing and Router in React?</b></summary>
+<summary><h5>⭕ Q30: What is Routing and Router in React?</h5></summary>
 
 ✅ Routing allows you to create a single-page web application with navigation, without the need for a full-page refresh.
 
@@ -718,7 +718,7 @@ function GrandChild({ user }) {
 </details>
 
 <details>
-<summary><b>⭕ Q31: What are the roles of &lt;Routes&gt; & &lt;Route&gt; component in React Routing?</b></summary>
+<summary><h5>⭕ Q31: What are the roles of &lt;Routes&gt; & &lt;Route&gt; component in React Routing?</h5></summary>
 
 ✅ The &lt;Routes&gt; component is used as the root container for declaring your collection of routes.
 
@@ -728,13 +728,13 @@ function GrandChild({ user }) {
 </details>
 
 <details>
-<summary><b>⭕ Q32: What are Route Parameters in React Routing?</b></summary>
+<summary><h5>⭕ Q32: What are Route Parameters in React Routing?</h5></summary>
 
 ✅ Route parameters in React Router are a way to pass dynamic values (data) to the component as part of the URL path.
 </details>
 
 <details>
-<summary><b>⭕ Q33: What are React Hooks? What are the Top React Hooks?</b></summary>
+<summary><h5>⭕ Q33: What are React Hooks? What are the Top React Hooks?</h5></summary>
 
 ✅ 1. React Hooks are inbuilt functions provided by React that allow functional components to use state and lifecycle features.
 
@@ -746,7 +746,7 @@ function GrandChild({ user }) {
 </details>
 
 <details>
-<summary><b>⭕ Q34: What is the role of useState() hook and how it works?</b></summary>
+<summary><h5>⭕ Q34: What is the role of useState() hook and how it works?</h5></summary>
 
 ✅ The useState hook enables functional components to manage state.
 
@@ -774,7 +774,7 @@ export function App(props) {
 </details>
 
 <details>
-<summary><b>⭕ Q35: What is the role of useEffect(). How it works and what is its use?</b></summary>
+<summary><h5>⭕ Q35: What is the role of useEffect(). How it works and what is its use?</h5></summary>
 
 ✅ The useEffect Hook in React is used to perform side effects in functional components.
 
@@ -794,7 +794,7 @@ useEffect(() => {
 </details>
 
 <details>
-<summary><b>⭕ Q36: What is Dependency Array in useEffect() hook?</b></summary>
+<summary><h5>⭕ Q36: What is Dependency Array in useEffect() hook?</h5></summary>
 
 ✅ Dependencies arrays (optional) act as triggers for useEffect to rerun; meaning if any of dependencies values change, the code inside useEffect() will be executed again.
 
@@ -804,7 +804,7 @@ useEffect(() => {
 </details>
 
 <details>
-<summary><b>⭕ Q37: What is the meaning of the empty array [] in the useEffect()?</b></summary>
+<summary><h5>⭕ Q37: What is the meaning of the empty array [] in the useEffect()?</h5></summary>
 
 ✅ An empty array indicates that the effect function should only run once 
 
@@ -836,7 +836,7 @@ function App() {
 </details>
 
 <details>
-<summary><b>⭕ Q38: What are default export and named export in React?</b></summary>
+<summary><h5>⭕ Q38: What are default export and named export in React?</h5></summary>
 
 ✅ **Default Export**: Allows you to export a single value as the main export from a file
 
@@ -870,7 +870,7 @@ import { add, subtract } from './utils'; // Names must match exactly
 </details>
 
 <details>
-<summary><b>⭕ Q39: What is the role of useContext() hook?</b></summary>
+<summary><h5>⭕ Q39: What is the role of useContext() hook?</h5></summary>
 
 ✅ **useContext()** allows you to access global data without prop drilling (passing props manually through every level of the component tree)
 
@@ -906,7 +906,7 @@ function Toolbar() {
 </details>
 
 <details>
-<summary><b>⭕ Q40: What is createContext() method? What are Provider & Consumer properties?</b></summary>
+<summary><h5>⭕ Q40: What is createContext() method? What are Provider & Consumer properties?</h5></summary>
 
 ✅ **createContext()** function returns an object with Provider and Consumer properties
 
@@ -916,7 +916,7 @@ function Toolbar() {
 </details>
 
 <details>
-<summary><b>⭕ Q41: What is useReducer() hook? When to use useState() and when useReducer()?</b></summary>
+<summary><h5>⭕ Q41: What is useReducer() hook? When to use useState() and when useReducer()?</h5></summary>
 
 ✅ The **useReducer()** hook is an alternative to useState() for managing more complex state logic in React functional components
 
@@ -975,7 +975,7 @@ function Counter() {
 </details>
 
 <details>
-<summary><b>⭕ Q42: How do useState and useReducer work internally?</b></summary>
+<summary><h5>⭕ Q42: How do useState and useReducer work internally?</h5></summary>
 
 **useState working flow**:
 ![useState flow](/assest/react/image22.png)
@@ -985,7 +985,7 @@ function Counter() {
 </details>
 
 <details>
-<summary><b>⭕Q43: What is useEffect in React?</b></summary>
+<summary><h5>⭕Q43: What is useEffect in React?</h5></summary>
 
 🧊 **useEffect** is a React Hook that lets you perform side effects in function components. Side effects include things like:
    - Fetching data from an API
@@ -1024,7 +1024,7 @@ export default App
 ## Component Lifecycle
 
 <details>
-<summary><b>⭕ Q44: What are component lifecycle phases?</b></summary>
+<summary><h5>⭕ Q44: What are component lifecycle phases?</h5></summary>
 
 👉 **Mounting Phase** (Component creation started)
 - This phase occurs when an instance of a component is being created and inserted into the DOM
@@ -1037,7 +1037,7 @@ export default App
 </details>
 
 <details>
-<summary><b>⭕ Q45: What is the role of componentDidMount(), componentDidUpdate(), and componentWillUnmount() method in component lifecycle?</b></summary>
+<summary><h5>⭕ Q45: What is the role of componentDidMount(), componentDidUpdate(), and componentWillUnmount() method in component lifecycle?</h5></summary>
 
 🔹 **1. componentDidMount()**
 - 📌 Called once after the component is mounted (inserted into the DOM)
@@ -1093,7 +1093,7 @@ class MyComponent extends React.Component {
 </details>
 
 <details>
-<summary><b>⭕Q46: What are the equivalents of componentDidMount(), componentDidUpdate(), and componentWillUnmount() in functional components using useEffect()?</b></summary>
+<summary><h5>⭕Q46: What are the equivalents of componentDidMount(), componentDidUpdate(), and componentWillUnmount() in functional components using useEffect()?</h5></summary>
 
 📘 **useEffect()** can handle all 3 lifecycles based on how you use it:
 
@@ -1128,7 +1128,7 @@ useEffect(() => {
 ## Performance Optimization
 
 <details>
-<summary><b>⭕ Q47: What is useMemo() in React?</b></summary>
+<summary><h5>⭕ Q47: What is useMemo() in React?</h5></summary>
 
 ✅ **useMemo()** is a React hook that memorizes (caches) the result of a function, so it only recalculates when its dependencies change. This is useful for expensive calculations to avoid doing the same work on every render.
 
@@ -1160,7 +1160,7 @@ function ExpensiveComponent({ num }) {
 </details>
 
 <details>
-<summary><b>⭕ Q48: What is useCallback() in React?</b></summary>
+<summary><h5>⭕ Q48: What is useCallback() in React?</h5></summary>
 
 ✅ **useCallback()** returns a memoized version of a function, preventing it from being recreated on every render. It's useful when you pass functions to child components to prevent unnecessary re-renders.
 
@@ -1196,7 +1196,7 @@ function App() {
 </details>
 
 <details>
-<summary><b>⭕ Q49: What is React.memo()?</b></summary>
+<summary><h5>⭕ Q49: What is React.memo()?</h5></summary>
 
 ✅ **React.memo()** is a higher-order component that prevents a functional component from re-rendering if its props haven't changed.
 
@@ -1230,7 +1230,7 @@ function App() {
 </details>
 
 <details>
-<summary><b>⭕ Q50: What is Lazy Loading in React?</b></summary>
+<summary><h5>⭕ Q50: What is Lazy Loading in React?</h5></summary>
 
 ✅ **Lazy loading** is a performance optimization where components are loaded only when needed — instead of loading everything at once. React provides React.lazy() and Suspense for this.
 
@@ -1267,7 +1267,7 @@ function App() {
 ## React Concepts
 
 <details>
-<summary><b>⭕Q51: What is Strict Mode in React?</b></summary>
+<summary><h5>⭕Q51: What is Strict Mode in React?</h5></summary>
 
 ✅ **React Strict Mode** is a tool that helps developers identify potential problems in their applications during development. It does not render anything on the UI and does not affect production builds — it only runs in development mode.
 
@@ -1280,7 +1280,7 @@ function App() {
 </details>
 
 <details>
-<summary><b>⭕Q52: What are Higher Order Components?</b></summary>
+<summary><h5>⭕Q52: What are Higher Order Components?</h5></summary>
 
 🧊 **Higher-Order Component (HOC)** is a function that takes in a component and returns a new component.
 
@@ -1315,7 +1315,7 @@ const HelloWithLogger = withLogger(Hello);
 </details>
 
 <details>
-<summary><b>⭕Q53: What is the difference between Controlled and Uncontrolled Components in React?</b></summary>
+<summary><h5>⭕Q53: What is the difference between Controlled and Uncontrolled Components in React?</h5></summary>
 
 📌 In React, form elements like `<input>`, `<textarea>`, and `<select>` can be either:
 - 🧊 **Controlled Components** — where React controls the form state
@@ -1376,7 +1376,7 @@ function UncontrolledInput() {
 </details>
 
 <details>
-<summary><b>⭕Q54: What are Keys in React?</b></summary>
+<summary><h5>⭕Q54: What are Keys in React?</h5></summary>
 
 ✅ In React, a **key** is a special attribute you add to elements when creating lists. Keys help React identify which items have changed, been added, or removed, making rendering more efficient.
 
