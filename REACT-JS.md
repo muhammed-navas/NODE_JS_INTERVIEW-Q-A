@@ -824,3 +824,142 @@ import { add, subtract } from './utils'; // Names must match exactly
 - Default exports can be imported with any name, named exports must use the exact export name
 - Named exports are helpful when a module has multiple functionalities
 </details>
+
+
+
+
+
+
+Q1. What is the role of useContext() hook?
+
+(a) 
+
+✅ To access global data like user authentication status, themes, language settings, etc., without prop drilling (passing props manually through every level of the component tree).
+
+✅ useContext() only lets you read the context and subscribe to its changes.
+
+✅ It does not trigger a re-render if the consuming component is not inside the Provider.
+
+✅ It must be used inside a functional component.
+
+import React , {createContext} from 'react';
+
+const ThemeContext = createContext('light');
+
+// 2. Provide the context
+function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Toolbar />
+    </ThemeContext.Provider>
+  );
+}
+
+import React , { useContext} from 'react'
+//access data in component
+function Toolbar() {
+  const theme = useContext(ThemeContext);
+  return <div>The current theme is {theme}</div>;
+}
+
+![alt text](/assest/react/image19.png)
+
+
+
+Q2. What is createContext() method? What are Provider & Consumer properties?
+
+(a) 
+
+✅ createContext() function returns an object with Provider and Consumer properties.
+
+✅ The Provider property is responsible for providing the context value to all its child components.
+
+✅ useContext() method or Consumer property can be used to consume the context value in child components.
+
+
+
+Q5. What is useReducer() hook? When to use useState() and when useReducer()?
+
+(a) 
+
+✅ The useReducer() hook is an alternative to useState() for managing more complex state logic in React functional components
+
+
+const [state, dispatch] = useReducer(reducer, initialState);
+
+✅ reducer: A function that defines how the state is updated.
+
+✅ initialState: The starting state.
+
+✅ dispatch: A function to send actions to the reducer.
+
+
+import React, { useReducer } from 'react';
+
+// Step 1: Define initial state
+const initialState = { count: 0 };
+
+// Step 2: Create reducer function
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+// Step 3: Use in a component
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <h2>Count: {state.count}</h2>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+    </div>
+  );
+}
+
+
+📝 Conclusion:
+
+✅ Use useState() for simple and isolated state needs.
+
+👉 Use useReducer() when:
+
+✅ Your component state is complex.
+
+✅ You need centralized state management logic.
+
+✅ You are refactoring a component with too many useState() calls.
+
+![alt text](/assest/react/image20.png)
+
+
+Q7. how the useState and useReducer working flow?
+
+// useState working flow
+![alt text](/assest/react/image22.png)
+
+// useReducer working flow 
+![alt text](/assest/react/image21.png)  ![alt text](/assest/react/image23.png)
+
+
+
+Q.1 What are component life cycle phases?
+
+👉. Mounting Phase (Component creation started)
+
+🧊 This phase occurs when an instance of a component is being created and inserted into the DOM.
+
+👉 Updating Phase (Component updates)
+
+🧊 This phase occurs when a component is being re-rendered as a result of changes to either its props or state.
+
+👉 Unmounting Phase (Removal from the DOM)
+
+🧊This phase occurs when a component is being removed from the DOM.
