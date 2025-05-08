@@ -827,22 +827,42 @@ import { add, subtract } from './utils'; // Names must match exactly
 
 
 
+# React Concepts and Hooks
 
+A comprehensive guide to React hooks and core concepts.
 
+## Table of Contents
+- [React Hooks](#react-hooks)
+  - [useContext](#usecontext)
+  - [useReducer](#usereducer)
+  - [useEffect](#useeffect)
+  - [useMemo](#usememo)
+  - [useCallback](#usecallback)
+- [Component Lifecycle](#component-lifecycle)
+- [Performance Optimization](#performance-optimization)
+  - [React.memo](#reactmemo)
+  - [Lazy Loading](#lazy-loading)
+- [React Concepts](#react-concepts)
+  - [Strict Mode](#strict-mode)
+  - [Higher Order Components](#higher-order-components)
+  - [Controlled vs Uncontrolled Components](#controlled-vs-uncontrolled-components)
+  - [Keys in React](#keys-in-react)
 
-Q1. What is the role of useContext() hook?
+## React Hooks
 
-(a) 
+<details>
+<summary><b>⭕ Q39: What is the role of useContext() hook?</b></summary>
 
-✅ To access global data like user authentication status, themes, language settings, etc., without prop drilling (passing props manually through every level of the component tree).
+✅ **useContext()** allows you to access global data without prop drilling (passing props manually through every level of the component tree)
 
-✅ useContext() only lets you read the context and subscribe to its changes.
+✅ It only lets you read the context and subscribe to its changes
 
-✅ It does not trigger a re-render if the consuming component is not inside the Provider.
+✅ It does not trigger a re-render if the consuming component is not inside the Provider
 
-✅ It must be used inside a functional component.
+✅ It must be used inside a functional component
 
-import React , {createContext} from 'react';
+```javascript
+import React, {createContext} from 'react';
 
 const ThemeContext = createContext('light');
 
@@ -855,45 +875,43 @@ function App() {
   );
 }
 
-import React , { useContext} from 'react'
+import React, { useContext} from 'react'
 //access data in component
 function Toolbar() {
   const theme = useContext(ThemeContext);
   return <div>The current theme is {theme}</div>;
 }
+```
 
-![alt text](/assest/react/image19.png)
+![Context API visualization](/assest/react/image19.png)
+</details>
 
+<details>
+<summary><b>⭕ Q40: What is createContext() method? What are Provider & Consumer properties?</b></summary>
 
+✅ **createContext()** function returns an object with Provider and Consumer properties
 
-Q2. What is createContext() method? What are Provider & Consumer properties?
+✅ The Provider property is responsible for providing the context value to all its child components
 
-(a) 
+✅ useContext() method or Consumer property can be used to consume the context value in child components
+</details>
 
-✅ createContext() function returns an object with Provider and Consumer properties.
+<details>
+<summary><b>⭕ Q41: What is useReducer() hook? When to use useState() and when useReducer()?</b></summary>
 
-✅ The Provider property is responsible for providing the context value to all its child components.
+✅ The **useReducer()** hook is an alternative to useState() for managing more complex state logic in React functional components
 
-✅ useContext() method or Consumer property can be used to consume the context value in child components.
-
-
-
-Q5. What is useReducer() hook? When to use useState() and when useReducer()?
-
-(a) 
-
-✅ The useReducer() hook is an alternative to useState() for managing more complex state logic in React functional components
-
-
+```javascript
 const [state, dispatch] = useReducer(reducer, initialState);
+```
 
-✅ reducer: A function that defines how the state is updated.
+✅ **reducer**: A function that defines how the state is updated
 
-✅ initialState: The starting state.
+✅ **initialState**: The starting state
 
-✅ dispatch: A function to send actions to the reducer.
+✅ **dispatch**: A function to send actions to the reducer
 
-
+```javascript
 import React, { useReducer } from 'react';
 
 // Step 1: Define initial state
@@ -923,59 +941,90 @@ function Counter() {
     </div>
   );
 }
+```
 
+📝 **Conclusion**:
 
-📝 Conclusion:
+✅ Use **useState()** for simple and isolated state needs
 
-✅ Use useState() for simple and isolated state needs.
+👉 Use **useReducer()** when:
+- Your component state is complex
+- You need centralized state management logic
+- You are refactoring a component with too many useState() calls
 
-👉 Use useReducer() when:
+![useReducer illustration](/assest/react/image20.png)
+</details>
 
-✅ Your component state is complex.
+<details>
+<summary><b>⭕ Q42: How do useState and useReducer work internally?</b></summary>
 
-✅ You need centralized state management logic.
+**useState working flow**:
+![useState flow](/assest/react/image22.png)
 
-✅ You are refactoring a component with too many useState() calls.
+**useReducer working flow**:
+![useReducer flow](/assest/react/image21.png) ![useReducer dispatch flow](/assest/react/image23.png)
+</details>
 
-![alt text](/assest/react/image20.png)
+<details>
+<summary><b>⭕Q43: What is useEffect in React?</b></summary>
 
+🧊 **useEffect** is a React Hook that lets you perform side effects in function components. Side effects include things like:
+   - Fetching data from an API
+   - Subscribing to events (like WebSockets)
+   - Manually manipulating the DOM
+   - Setting timers
 
-Q7. how the useState and useReducer working flow?
+🧊 **Runs after render**: The effect runs after the component renders
 
-// useState working flow
-![alt text](/assest/react/image22.png)
+🧊 **Dependency array**: Determines when the effect runs:
+   - `[]` (empty array): runs only once after the initial render
+   - `[someValue]`: runs when someValue changes
+   - No array: runs after every render
 
-// useReducer working flow 
-![alt text](/assest/react/image21.png)  ![alt text](/assest/react/image23.png)
+```javascript
+//useEffect rendering output example
+import React, {useEffect} from 'react'
 
+function App() {
+    console.log('start')
+    useEffect(()=>{
+        console.log('this is useEffect')
+    })
+    console.log('end')
+    return <h1>hello</h1>
+}
+export default App
 
+//output 
+// start 
+// end 
+// this is useEffect
+```
+</details>
 
-Q.1 What are component life cycle phases?
+## Component Lifecycle
 
-👉. Mounting Phase (Component creation started)
+<details>
+<summary><b>⭕ Q44: What are component lifecycle phases?</b></summary>
 
-🧊 This phase occurs when an instance of a component is being created and inserted into the DOM.
+👉 **Mounting Phase** (Component creation started)
+- This phase occurs when an instance of a component is being created and inserted into the DOM
 
-👉 Updating Phase (Component updates)
+👉 **Updating Phase** (Component updates)
+- This phase occurs when a component is being re-rendered as a result of changes to either its props or state
 
-🧊 This phase occurs when a component is being re-rendered as a result of changes to either its props or state.
+👉 **Unmounting Phase** (Removal from the DOM)
+- This phase occurs when a component is being removed from the DOM
+</details>
 
-👉 Unmounting Phase (Removal from the DOM)
+<details>
+<summary><b>⭕ Q45: What is the role of componentDidMount(), componentDidUpdate(), and componentWillUnmount() method in component lifecycle?</b></summary>
 
-🧊This phase occurs when a component is being removed from the DOM.
+🔹 **1. componentDidMount()**
+- 📌 Called once after the component is mounted (inserted into the DOM)
+- 📌 Ideal for: API calls, event listeners, initial DOM operations, etc.
 
-
-
-Q77  What is the role of componentDidMount(), componentDidUpdate(), and componentWillUnmount() method in component life cycle?
-
-(a) 
-
-🔹 1. componentDidMount()
-
-📌 Called once after the component is mounted (inserted into the DOM).
-
-📌 Ideal for: API calls, event listeners, initial DOM operations, etc.
-
+```javascript
 class MyComponent extends React.Component {
   componentDidMount() {
     console.log("Component mounted");
@@ -986,13 +1035,13 @@ class MyComponent extends React.Component {
     return <div>Hello</div>;
   }
 }
+```
 
-🔹 2. componentDidUpdate(prevProps, prevState)
+🔹 **2. componentDidUpdate(prevProps, prevState)**
+- 📌 Called after every update (re-render), except the first render
+- 📌 Ideal for: Reacting to prop/state changes, making network calls, etc.
 
-📌 Called after every update (re-render), except the first render.
-
-📌 Ideal for: Reacting to prop/state changes, making network calls, etc.
-
+```javascript
 class MyComponent extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.value !== this.props.value) {
@@ -1004,13 +1053,13 @@ class MyComponent extends React.Component {
     return <div>Updated Value: {this.props.value}</div>;
   }
 }
+```
 
-🔹 3. componentWillUnmount()
+🔹 **3. componentWillUnmount()**
+- 📌 Called just before the component is removed from the DOM
+- 📌 Ideal for: Cleanup, such as removing event listeners or cancelling timers
 
-📌 Called just before the component is removed from the DOM.
-
-📌 Ideal for: Cleanup, such as removing event listeners or cancelling timers.
-
+```javascript
 class MyComponent extends React.Component {
   componentWillUnmount() {
     console.log("Component will unmount");
@@ -1021,56 +1070,31 @@ class MyComponent extends React.Component {
     return <div>Goodbye</div>;
   }
 }
+```
+</details>
 
+<details>
+<summary><b>⭕Q46: What are the equivalents of componentDidMount(), componentDidUpdate(), and componentWillUnmount() in functional components using useEffect()?</b></summary>
 
-Q . what is useEffect in react ? 
+📘 **useEffect()** can handle all 3 lifecycles based on how you use it:
 
-(a) 
-
-🧊 useEffect is a React Hook that lets you perform side effects in function components. Side effects include things like:
-
-       *  Fetching data from an API
-
-       *  Subscribing to events (like WebSockets)
-
-       *  Manually manipulating the DOM
-
-       *  Setting timers
-
-🧊  Runs after render: The effect runs after the component renders.
-
-🧊 Dependency array: Determines when the effect runs:
-
-        * [] (empty array): runs only once after the initial render.
-
-        * [someValue]: runs when someValue changes.
-
-        * No array: runs after every render.
-
-
-Q . 🔄 What are the equivalents of componentDidMount(), componentDidUpdate(), and componentWillUnmount() in functional components using useEffect()?
-
-(a) 
-
-📘 useEffect() can handle all 3 lifecycles based on how you use it.
-
- ✅ Equivalent of componentDidMount():
-
- useEffect(() => {
+✅ **Equivalent of componentDidMount()**:
+```javascript
+useEffect(() => {
   console.log("Component mounted");
   // API call or setup
 }, []); // Empty dependency array = run once
+```
 
-
-✅ Equivalent of componentDidUpdate():
-
+✅ **Equivalent of componentDidUpdate()**:
+```javascript
 useEffect(() => {
   console.log("Prop or state changed");
 }, [props.value]); // Run when `props.value` changes
+```
 
-
-✅ Equivalent of componentWillUnmount():
-
+✅ **Equivalent of componentWillUnmount()**:
+```javascript
 useEffect(() => {
   const timer = setInterval(() => console.log("Tick"), 1000);
   
@@ -1079,43 +1103,23 @@ useEffect(() => {
     clearInterval(timer);
   };
 }, []);
+```
+</details>
 
-------------------------------------------------------------------------------------
+## Performance Optimization
 
-//useEffect rendering output 
+<details>
+<summary><b>⭕ Q47: What is useMemo() in React?</b></summary>
 
-import React , {useEffect} from 'react'
+✅ **useMemo()** is a React hook that memorizes (caches) the result of a function, so it only recalculates when its dependencies change. This is useful for expensive calculations to avoid doing the same work on every render.
 
-function App() {
-    console.log('start')
-    useEffect(()=>{
-        console.log('this is useEffect')
-    })
-        console.log('end')
-    return <h1>hello</h1>
-}
-export default App
-
-//output 
-// start 
-// endt 
-// this is useEffect
-
-
-
-Q1. What is useMemo() in React?
-
-(a) 
-
-✅ useMemo() is a React hook that memorizes (caches) the result of a function, so it only recalculates when its dependencies change. This is useful for expensive calculations to avoid doing the same work on every render.
-
-🧠  Syntax:
-
+🧠 **Syntax**:
+```javascript
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
 
-
-🧠 example :  
-
+🧠 **Example**:
+```javascript
 import React, { useState, useMemo } from 'react';
 
 function ExpensiveComponent({ num }) {
@@ -1130,27 +1134,26 @@ function ExpensiveComponent({ num }) {
 
   return <div>Result: {result}</div>;
 }
+```
 
-❎ Without useMemo, the calculation runs on every render.
+❎ Without useMemo, the calculation runs on every render
+✅ With useMemo, the calculation runs only when num changes
+</details>
 
-✅ With useMemo, the calculation runs only when num changes.
+<details>
+<summary><b>⭕ Q48: What is useCallback() in React?</b></summary>
 
+✅ **useCallback()** returns a memoized version of a function, preventing it from being recreated on every render. It's useful when you pass functions to child components to prevent unnecessary re-renders.
 
-
-Q2. What is useCallback() in React?
-
-(a)
-
-✅ useCallback() returns a memoized version of a function, preventing it from being recreated on every render. It’s useful when you pass functions to child components to prevent unnecessary re-renders.
-
-🧠 Syntax:
-
+🧠 **Syntax**:
+```javascript
 const memoizedCallback = useCallback(() => {
   doSomething(a, b);
 }, [a, b]);
+```
 
-🧠 example :
-
+🧠 **Example**:
+```javascript
 import React, { useState, useCallback } from 'react';
 
 function Button({ handleClick }) {
@@ -1167,25 +1170,24 @@ function App() {
 
   return <Button handleClick={memoizedClick} />;
 }
+```
 
+❎ Without useCallback, handleClick is recreated every time
+✅ With useCallback, handleClick stays the same unless dependencies change
+</details>
 
-❎ Without useCallback, handleClick is recreated every time.
+<details>
+<summary><b>⭕ Q49: What is React.memo()?</b></summary>
 
-✅ With useCallback, handleClick stays the same unless
+✅ **React.memo()** is a higher-order component that prevents a functional component from re-rendering if its props haven't changed.
 
-
-Q3. What is React.memo()?
-
-(a) 
-
-✅ React.memo() is a higher-order component that prevents a functional component from re-rendering if its props haven't changed.
-
-🧠 Syntax:
-
+🧠 **Syntax**:
+```javascript
 const MemoizedComponent = React.memo(Component);
+```
 
-🧠 example :
-
+🧠 **Example**:
+```javascript
 import React, { useState } from 'react';
 
 const Child = React.memo(({ name }) => {
@@ -1203,23 +1205,23 @@ function App() {
     </>
   );
 }
-
+```
 
 📌 Here, the Child component won't re-render unless the name prop changes.
+</details>
 
+<details>
+<summary><b>⭕ Q50: What is Lazy Loading in React?</b></summary>
 
-Q4. What is Lazy Loading in React?
+✅ **Lazy loading** is a performance optimization where components are loaded only when needed — instead of loading everything at once. React provides React.lazy() and Suspense for this.
 
-(a) 
-
-✅ Lazy loading is a performance optimization where components are loaded only when needed — instead of loading everything at once. React provides React.lazy() and Suspense for this.
-
-🧠 Syntax:
-
+🧠 **Syntax**:
+```javascript
 const LazyComponent = React.lazy(() => import('./MyComponent'));
+```
 
-🧠 example :
-
+🧠 **Example**:
+```javascript
 import React, { Suspense } from 'react';
 
 const LazyComponent = React.lazy(() => import('./MyComponent'));
@@ -1234,13 +1236,150 @@ function App() {
     </div>
   );
 }
+```
 
+📌 **Benefits**:
+- Reduces initial load time
+- Loads heavy components only when needed
 
-📌 Benefits:
+![Lazy Loading Illustration](/assest/react/image24.png)
+</details>
 
-    * Reduces initial load time.
+## React Concepts
 
-    * Loads heavy components only when needed.
+<details>
+<summary><b>⭕Q51: What is Strict Mode in React?</b></summary>
 
+✅ **React Strict Mode** is a tool that helps developers identify potential problems in their applications during development. It does not render anything on the UI and does not affect production builds — it only runs in development mode.
 
-![alt text](/assest/react/image24.png)
+🚦 **Why Use Strict Mode?**
+- 🧊 Detecting unsafe lifecycle methods
+- 🧊 Warning about legacy string refs
+- 🧊 Identifying unexpected side effects
+- 🧊 Detecting state updates inside useEffect cleanup
+- 🧊 Double-invoking certain functions to simulate strict behavior (in development)
+</details>
+
+<details>
+<summary><b>⭕Q52: What are Higher Order Components?</b></summary>
+
+🧊 **Higher-Order Component (HOC)** is a function that takes in a component and returns a new component.
+
+📌 Think of HOCs like wrappers that add extra features or data to a component without modifying the original one.
+
+```javascript
+import React from 'react';
+
+// Higher Order Component
+function withLogger(WrappedComponent) {
+  return function EnhancedComponent(props) {
+    console.log('Props:', props);
+    return <WrappedComponent {...props} />;
+  };
+}
+
+// Normal component
+function Hello({ name }) {
+  return <h1>Hello, {name}</h1>;
+}
+
+// Enhanced version of Hello
+const HelloWithLogger = withLogger(Hello);
+
+// Usage
+<HelloWithLogger name="React" />;
+```
+
+✅ This will log the props every time the component renders, without changing the original Hello component.
+
+![HOC Illustration](/assest/react/image25.png)
+</details>
+
+<details>
+<summary><b>⭕Q53: What is the difference between Controlled and Uncontrolled Components in React?</b></summary>
+
+📌 In React, form elements like `<input>`, `<textarea>`, and `<select>` can be either:
+- 🧊 **Controlled Components** — where React controls the form state
+- 🧊 **Uncontrolled Components** — where the DOM manages the state
+
+🔧 **Controlled Component**:
+✅ React manages the state via useState or this.state
+
+```javascript
+import React, { useState } from 'react';
+
+function ControlledInput() {
+  const [name, setName] = useState('');
+
+  return (
+    <div>
+      <input 
+        type="text" 
+        value={name}
+        onChange={(e) => setName(e.target.value)} 
+      />
+      <p>You typed: {name}</p>
+    </div>
+  );
+}
+```
+
+🧠 **Explanation**:
+- 📌 value={name} binds the input value to React state
+- 📌 onChange updates the state
+- 📌 React controls everything
+
+🔧 **Uncontrolled Component**:
+✅ React does not manage the input value — instead, it accesses the value using a ref
+
+```javascript
+import React, { useRef } from 'react';
+
+function UncontrolledInput() {
+  const inputRef = useRef();
+
+  const handleSubmit = () => {
+    alert('Input Value: ' + inputRef.current.value);
+  };
+
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleSubmit}>Submit</button>
+    </div>
+  );
+}
+```
+
+🧠 **Explanation**:
+- 📌 No useState — React doesn't track the input value
+- 📌 You access the DOM value via ref
+</details>
+
+<details>
+<summary><b>⭕Q54: What are Keys in React?</b></summary>
+
+✅ In React, a **key** is a special attribute you add to elements when creating lists. Keys help React identify which items have changed, been added, or removed, making rendering more efficient.
+
+📉 **Bad Example Using Index**:
+```javascript
+// Not ideal if items can be added/removed
+{items.map((item, index) => (
+  <li key={index}>{item.name}</li>
+))}
+```
+
+✅ **Better Example Using Unique ID**:
+```javascript
+{items.map((item) => (
+  <li key={item.id}>{item.name}</li>
+))}
+```
+
+🧠 **What Happens Without Keys?**
+- 📌 React may re-render entire lists unnecessarily
+- 📌 You can get bugs with input fields losing focus or incorrect updates
+- 📌 Warning: "Each child in a list should have a unique key prop."
+
+![Keys in React illustration](/assest/react/image26.png)
+</details>
