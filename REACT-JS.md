@@ -963,3 +963,284 @@ Q.1 What are component life cycle phases?
 👉 Unmounting Phase (Removal from the DOM)
 
 🧊This phase occurs when a component is being removed from the DOM.
+
+
+
+Q77  What is the role of componentDidMount(), componentDidUpdate(), and componentWillUnmount() method in component life cycle?
+
+(a) 
+
+🔹 1. componentDidMount()
+
+📌 Called once after the component is mounted (inserted into the DOM).
+
+📌 Ideal for: API calls, event listeners, initial DOM operations, etc.
+
+class MyComponent extends React.Component {
+  componentDidMount() {
+    console.log("Component mounted");
+    // Fetch data or set up listeners
+  }
+
+  render() {
+    return <div>Hello</div>;
+  }
+}
+
+🔹 2. componentDidUpdate(prevProps, prevState)
+
+📌 Called after every update (re-render), except the first render.
+
+📌 Ideal for: Reacting to prop/state changes, making network calls, etc.
+
+class MyComponent extends React.Component {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.value !== this.props.value) {
+      console.log("Prop changed, do something");
+    }
+  }
+
+  render() {
+    return <div>Updated Value: {this.props.value}</div>;
+  }
+}
+
+🔹 3. componentWillUnmount()
+
+📌 Called just before the component is removed from the DOM.
+
+📌 Ideal for: Cleanup, such as removing event listeners or cancelling timers.
+
+class MyComponent extends React.Component {
+  componentWillUnmount() {
+    console.log("Component will unmount");
+    // Cleanup logic
+  }
+
+  render() {
+    return <div>Goodbye</div>;
+  }
+}
+
+
+Q . what is useEffect in react ? 
+
+(a) 
+
+🧊 useEffect is a React Hook that lets you perform side effects in function components. Side effects include things like:
+
+       *  Fetching data from an API
+
+       *  Subscribing to events (like WebSockets)
+
+       *  Manually manipulating the DOM
+
+       *  Setting timers
+
+🧊  Runs after render: The effect runs after the component renders.
+
+🧊 Dependency array: Determines when the effect runs:
+
+        * [] (empty array): runs only once after the initial render.
+
+        * [someValue]: runs when someValue changes.
+
+        * No array: runs after every render.
+
+
+Q . 🔄 What are the equivalents of componentDidMount(), componentDidUpdate(), and componentWillUnmount() in functional components using useEffect()?
+
+(a) 
+
+📘 useEffect() can handle all 3 lifecycles based on how you use it.
+
+ ✅ Equivalent of componentDidMount():
+
+ useEffect(() => {
+  console.log("Component mounted");
+  // API call or setup
+}, []); // Empty dependency array = run once
+
+
+✅ Equivalent of componentDidUpdate():
+
+useEffect(() => {
+  console.log("Prop or state changed");
+}, [props.value]); // Run when `props.value` changes
+
+
+✅ Equivalent of componentWillUnmount():
+
+useEffect(() => {
+  const timer = setInterval(() => console.log("Tick"), 1000);
+  
+  return () => {
+    console.log("Cleanup before unmount");
+    clearInterval(timer);
+  };
+}, []);
+
+------------------------------------------------------------------------------------
+
+//useEffect rendering output 
+
+import React , {useEffect} from 'react'
+
+function App() {
+    console.log('start')
+    useEffect(()=>{
+        console.log('this is useEffect')
+    })
+        console.log('end')
+    return <h1>hello</h1>
+}
+export default App
+
+//output 
+// start 
+// endt 
+// this is useEffect
+
+
+
+Q1. What is useMemo() in React?
+
+(a) 
+
+✅ useMemo() is a React hook that memorizes (caches) the result of a function, so it only recalculates when its dependencies change. This is useful for expensive calculations to avoid doing the same work on every render.
+
+🧠  Syntax:
+
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+
+🧠 example :  
+
+import React, { useState, useMemo } from 'react';
+
+function ExpensiveComponent({ num }) {
+  const expensiveCalculation = (n) => {
+    console.log('Calculating...');
+    let result = 0;
+    for (let i = 0; i < 100000000; i++) result += n;
+    return result;
+  };
+
+  const result = useMemo(() => expensiveCalculation(num), [num]);
+
+  return <div>Result: {result}</div>;
+}
+
+❎ Without useMemo, the calculation runs on every render.
+
+✅ With useMemo, the calculation runs only when num changes.
+
+
+
+Q2. What is useCallback() in React?
+
+(a)
+
+✅ useCallback() returns a memoized version of a function, preventing it from being recreated on every render. It’s useful when you pass functions to child components to prevent unnecessary re-renders.
+
+🧠 Syntax:
+
+const memoizedCallback = useCallback(() => {
+  doSomething(a, b);
+}, [a, b]);
+
+🧠 example :
+
+import React, { useState, useCallback } from 'react';
+
+function Button({ handleClick }) {
+  console.log('Button rendered');
+  return <button onClick={handleClick}>Click me</button>;
+}
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  const memoizedClick = useCallback(() => {
+    setCount(prev => prev + 1);
+  }, []);
+
+  return <Button handleClick={memoizedClick} />;
+}
+
+
+❎ Without useCallback, handleClick is recreated every time.
+
+✅ With useCallback, handleClick stays the same unless
+
+
+Q3. What is React.memo()?
+
+(a) 
+
+✅ React.memo() is a higher-order component that prevents a functional component from re-rendering if its props haven't changed.
+
+🧠 Syntax:
+
+const MemoizedComponent = React.memo(Component);
+
+🧠 example :
+
+import React, { useState } from 'react';
+
+const Child = React.memo(({ name }) => {
+  console.log('Child rendered');
+  return <div>Hello {name}</div>;
+});
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <Child name="React" />
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </>
+  );
+}
+
+
+📌 Here, the Child component won't re-render unless the name prop changes.
+
+
+Q4. What is Lazy Loading in React?
+
+(a) 
+
+✅ Lazy loading is a performance optimization where components are loaded only when needed — instead of loading everything at once. React provides React.lazy() and Suspense for this.
+
+🧠 Syntax:
+
+const LazyComponent = React.lazy(() => import('./MyComponent'));
+
+🧠 example :
+
+import React, { Suspense } from 'react';
+
+const LazyComponent = React.lazy(() => import('./MyComponent'));
+
+function App() {
+  return (
+    <div>
+      <h1>Main App</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyComponent />
+      </Suspense>
+    </div>
+  );
+}
+
+
+📌 Benefits:
+
+    * Reduces initial load time.
+
+    * Loads heavy components only when needed.
+
+
+![alt text](/assest/react/image24.png)
