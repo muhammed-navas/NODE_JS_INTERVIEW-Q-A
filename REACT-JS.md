@@ -1,3 +1,47 @@
+
+
+# React Concepts and Hooks
+
+A comprehensive guide to React hooks and core concepts.
+
+## Table of Contents
+
+- [Core Concepts](#core-concepts)
+  - [What is React?](#what-is-react)
+  - [Virtual DOM](#virtual-dom)
+  - [JSX](#jsx)
+  - [Components](#components)
+  - [Props](#props)
+  - [State](#state)
+  - [React vs Other Frameworks](#react-vs-other-frameworks)
+  - [Development Environment](#development-environment)
+  - [Component Types](#component-types)
+- [React Hooks](#react-hooks)
+  - [useState](#usestate)
+  - [useEffect](#useeffect)
+  - [useContext](#usecontext)
+  - [useReducer](#usereducer)
+  - [useMemo](#usememo)
+  - [useCallback](#usecallback)
+- [Routing](#routing)
+- [Advanced Patterns](#advanced-patterns)
+  - [Component Composition](#component-composition)
+  - [Avoiding Prop Drilling](#avoiding-prop-drilling)
+- [Performance Optimization](#performance-optimization)
+  - [React.memo](#reactmemo)
+  - [Lazy Loading](#lazy-loading)
+- [Best Practices](#best-practices)
+- [Component Lifecycle](#component-lifecycle)
+- [React Concepts](#react-concepts)
+  - [Strict Mode](#strict-mode)
+  - [Higher Order Components](#higher-order-components)
+  - [Controlled vs Uncontrolled Components](#controlled-vs-uncontrolled-components)
+  - [Keys in React](#keys-in-react)
+- [React Fragments](#react-fragments)
+
+
+## React Hooks
+
 <details>
 <summary><b>⭕ Q1: What is React?</b></summary>
 
@@ -824,31 +868,6 @@ import { add, subtract } from './utils'; // Names must match exactly
 - Default exports can be imported with any name, named exports must use the exact export name
 - Named exports are helpful when a module has multiple functionalities
 </details>
-
-
-
-# React Concepts and Hooks
-
-A comprehensive guide to React hooks and core concepts.
-
-## Table of Contents
-- [React Hooks](#react-hooks)
-  - [useContext](#usecontext)
-  - [useReducer](#usereducer)
-  - [useEffect](#useeffect)
-  - [useMemo](#usememo)
-  - [useCallback](#usecallback)
-- [Component Lifecycle](#component-lifecycle)
-- [Performance Optimization](#performance-optimization)
-  - [React.memo](#reactmemo)
-  - [Lazy Loading](#lazy-loading)
-- [React Concepts](#react-concepts)
-  - [Strict Mode](#strict-mode)
-  - [Higher Order Components](#higher-order-components)
-  - [Controlled vs Uncontrolled Components](#controlled-vs-uncontrolled-components)
-  - [Keys in React](#keys-in-react)
-
-## React Hooks
 
 <details>
 <summary><b>⭕ Q39: What is the role of useContext() hook?</b></summary>
